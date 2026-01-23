@@ -1,0 +1,49 @@
+{
+  "archimateColors": {
+    "business": {
+      "light": "#FFF2CC",
+      "medium": "#FFE699",
+      "dark": "#FFD966",
+      "description": "业务层颜色 - 黄色系"
+    },
+    "application": {
+      "light": "#D5E8D4",
+      "medium": "#B3D9B2",
+      "dark": "#97D077",
+      "description": "应用层颜色 - 绿色系"
+    },
+    "technology": {
+      "light": "#D5E8D4",
+      "medium": "#B3D9B2",
+      "dark": "#97D077",
+      "description": "技术层颜色 - 绿色系"
+    },
+    "motivation": {
+      "light": "#E1D5E7",
+      "medium": "#C4A8D4",
+      "dark": "#9673A6",
+      "description": "动机层颜色 - 紫色系"
+    },
+    "implementation": {
+      "light": "#F5F5F5",
+      "medium": "#E8E8E8",
+      "dark": "#D0D0D0",
+      "description": "实施与迁移层颜色 - 灰色系"
+    }
+  },
+  "relationshipColors": {
+    "structural": {
+      "solid": "#000000",
+      "description": "结构关系 - 实线"
+    },
+    "dynamic": {
+      "dashed": "#666666",
+      "description": "动态关系 - 虚线"
+    }
+  },
+  "usage": {
+    "note": "这些颜色符合 ArchiMate 3.2 标准规范",
+    "drawio": "在 draw.io 中使用这些颜色代码设置元素填充色",
+    "hexFormat": "所有颜色使用十六进制格式，可直接用于 CSS 和 draw.io"
+  }
+}

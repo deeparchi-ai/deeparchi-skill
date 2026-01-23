@@ -1,0 +1,32 @@
+{
+  "name": "deeparchi",
+  "version": "1.0.0",
+  "description": "Create ArchiMate 3.2 compliant enterprise architecture diagrams using draw.io",
+  "main": "README.md",
+  "keywords": [
+    "archimate",
+    "enterprise-architecture",
+    "drawio",
+    "togaf",
+    "architecture-modeling",
+    "deeparchi"
+  ],
+  "author": "DeepArchi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deeparchi/deeparchi-skill.git"
+  },
+  "files": [
+    "README.md",
+    "EXAMPLES.md",
+    "references/**/*",
+    "scripts/**/*",
+    "assets/**/*"
+  ],
+  "skill": {
+    "name": "deeparchi",
+    "description": "Create ArchiMate 3.2 compliant enterprise architecture diagrams using draw.io. Use this skill when users need to create business architecture, application architecture, technology architecture views, or any enterprise architecture modeling tasks following ArchiMate standards.",
+    "version": "1.0.0"
+  }
+}
