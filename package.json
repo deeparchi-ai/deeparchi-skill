@@ -1,0 +1,37 @@
+﻿{
+  "name": "deeparchi",
+  "version": "1.3.0",
+  "description": "Create ArchiMate 3.2 compliant enterprise architecture diagrams using draw.io. Integrates with archimate, togaf, ddd, bian, bpmn, it4it skills.",
+  "main": "README.md",
+  "keywords": [
+    "archimate",
+    "enterprise-architecture",
+    "drawio",
+    "togaf",
+    "bian",
+    "ddd",
+    "bpmn",
+    "it4it",
+    "architecture-modeling",
+    "deeparchi"
+  ],
+  "author": "DeepArchi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuangmi-bit/deeparchi-skill.git"
+  },
+  "files": [
+    "README.md",
+    "EXAMPLES.md",
+    "references/**/*",
+    "scripts/**/*",
+    "assets/**/*"
+  ],
+  "skill": {
+    "name": "deeparchi",
+    "description": "Create ArchiMate 3.2 compliant enterprise architecture diagrams using draw.io. Integrates with archimate, togaf, ddd, bian, bpmn, it4it skills for comprehensive enterprise architecture modeling.",
+    "version": "1.3.0",
+    "integrates": ["archimate", "togaf", "ddd", "bian", "bpmn", "it4it"]
+  }
+}
