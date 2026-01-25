@@ -1,0 +1,327 @@
+{
+  "name": "DeepArchi Brand Color Scheme",
+  "version": "1.0.0",
+  "description": "基于 DeepArchi Logo 设计的前端和 PPT 配色方案",
+  "logo_analysis": {
+    "primary_elements": "蓝色网络球体 + 深蓝文字 + 红色点缀",
+    "style": "科技感、专业、现代、智能架构"
+  },
+  
+  "color_palette": {
+    "primary": {
+      "deep_blue": {
+        "hex": "#1A3A5C",
+        "rgb": "26, 58, 92",
+        "usage": "主标题、Logo文字、重要按钮"
+      },
+      "ocean_blue": {
+        "hex": "#2E6B9E",
+        "rgb": "46, 107, 158", 
+        "usage": "次级标题、链接、图标"
+      },
+      "sky_blue": {
+        "hex": "#4A9BD9",
+        "rgb": "74, 155, 217",
+        "usage": "交互元素、进度条、高亮"
+      }
+    },
+    
+    "secondary": {
+      "light_cyan": {
+        "hex": "#7BC4E8",
+        "rgb": "123, 196, 232",
+        "usage": "网络节点、连接线、装饰"
+      },
+      "pale_blue": {
+        "hex": "#B8E0F5",
+        "rgb": "184, 224, 245",
+        "usage": "背景渐变、卡片背景"
+      },
+      "ice_blue": {
+        "hex": "#E8F4FC",
+        "rgb": "232, 244, 252",
+        "usage": "页面背景、表格斑马纹"
+      }
+    },
+    
+    "accent": {
+      "signal_red": {
+        "hex": "#E53935",
+        "rgb": "229, 57, 53",
+        "usage": "强调点、警告、Logo红点"
+      },
+      "coral": {
+        "hex": "#FF6B6B",
+        "rgb": "255, 107, 107",
+        "usage": "次级强调、hover状态"
+      }
+    },
+    
+    "neutral": {
+      "charcoal": {
+        "hex": "#2D3748",
+        "rgb": "45, 55, 72",
+        "usage": "正文文字"
+      },
+      "slate": {
+        "hex": "#4A5568",
+        "rgb": "74, 85, 104",
+        "usage": "次级文字"
+      },
+      "silver": {
+        "hex": "#A0AEC0",
+        "rgb": "160, 174, 192",
+        "usage": "占位符、禁用状态"
+      },
+      "cloud": {
+        "hex": "#EDF2F7",
+        "rgb": "237, 242, 247",
+        "usage": "分割线、边框"
+      },
+      "white": {
+        "hex": "#FFFFFF",
+        "rgb": "255, 255, 255",
+        "usage": "卡片背景、输入框"
+      }
+    },
+    
+    "semantic": {
+      "success": {
+        "hex": "#38A169",
+        "rgb": "56, 161, 105"
+      },
+      "warning": {
+        "hex": "#D69E2E",
+        "rgb": "214, 158, 46"
+      },
+      "error": {
+        "hex": "#E53E3E",
+        "rgb": "227, 62, 62"
+      },
+      "info": {
+        "hex": "#3182CE",
+        "rgb": "49, 130, 206"
+      }
+    }
+  },
+  
+  "gradients": {
+    "primary_gradient": {
+      "css": "linear-gradient(135deg, #1A3A5C 0%, #2E6B9E 50%, #4A9BD9 100%)",
+      "usage": "Hero区域、主按钮、标题背景"
+    },
+    "network_gradient": {
+      "css": "linear-gradient(180deg, #7BC4E8 0%, #4A9BD9 50%, #2E6B9E 100%)",
+      "usage": "模拟Logo网络球体效果"
+    },
+    "subtle_gradient": {
+      "css": "linear-gradient(180deg, #FFFFFF 0%, #E8F4FC 100%)",
+      "usage": "页面背景、卡片悬停"
+    },
+    "accent_gradient": {
+      "css": "linear-gradient(135deg, #E53935 0%, #FF6B6B 100%)",
+      "usage": "CTA按钮、重要提示"
+    }
+  },
+  
+  "frontend": {
+    "css_variables": {
+      "--color-primary": "#1A3A5C",
+      "--color-primary-light": "#2E6B9E",
+      "--color-primary-lighter": "#4A9BD9",
+      "--color-secondary": "#7BC4E8",
+      "--color-secondary-light": "#B8E0F5",
+      "--color-background": "#E8F4FC",
+      "--color-accent": "#E53935",
+      "--color-text": "#2D3748",
+      "--color-text-secondary": "#4A5568",
+      "--color-border": "#EDF2F7",
+      "--color-white": "#FFFFFF"
+    },
+    
+    "tailwind_config": {
+      "deeparchi": {
+        "50": "#E8F4FC",
+        "100": "#B8E0F5",
+        "200": "#7BC4E8",
+        "300": "#4A9BD9",
+        "400": "#2E6B9E",
+        "500": "#1A3A5C",
+        "600": "#153049",
+        "700": "#102536",
+        "800": "#0B1A24",
+        "900": "#060F12"
+      },
+      "accent": {
+        "500": "#E53935",
+        "400": "#FF6B6B"
+      }
+    },
+    
+    "component_styles": {
+      "button_primary": {
+        "background": "#1A3A5C",
+        "hover": "#2E6B9E",
+        "text": "#FFFFFF",
+        "border_radius": "8px"
+      },
+      "button_secondary": {
+        "background": "transparent",
+        "border": "2px solid #1A3A5C",
+        "hover_background": "#E8F4FC",
+        "text": "#1A3A5C"
+      },
+      "button_accent": {
+        "background": "linear-gradient(135deg, #E53935 0%, #FF6B6B 100%)",
+        "hover": "#E53935",
+        "text": "#FFFFFF"
+      },
+      "card": {
+        "background": "#FFFFFF",
+        "border": "1px solid #EDF2F7",
+        "shadow": "0 4px 6px -1px rgba(26, 58, 92, 0.1)",
+        "hover_shadow": "0 10px 15px -3px rgba(26, 58, 92, 0.15)",
+        "border_radius": "12px"
+      },
+      "input": {
+        "background": "#FFFFFF",
+        "border": "1px solid #A0AEC0",
+        "focus_border": "#4A9BD9",
+        "focus_ring": "rgba(74, 155, 217, 0.3)"
+      },
+      "navigation": {
+        "background": "#1A3A5C",
+        "text": "#FFFFFF",
+        "hover": "#2E6B9E",
+        "active": "#4A9BD9"
+      },
+      "sidebar": {
+        "background": "#FFFFFF",
+        "border": "1px solid #EDF2F7",
+        "active_item": "#E8F4FC",
+        "active_border": "#4A9BD9"
+      }
+    }
+  },
+  
+  "ppt": {
+    "slide_backgrounds": {
+      "title_slide": {
+        "type": "gradient",
+        "value": "linear-gradient(135deg, #1A3A5C 0%, #2E6B9E 100%)",
+        "text_color": "#FFFFFF"
+      },
+      "content_slide": {
+        "type": "solid",
+        "value": "#FFFFFF",
+        "text_color": "#2D3748"
+      },
+      "section_divider": {
+        "type": "gradient", 
+        "value": "linear-gradient(180deg, #E8F4FC 0%, #B8E0F5 100%)",
+        "text_color": "#1A3A5C"
+      },
+      "highlight_slide": {
+        "type": "solid",
+        "value": "#1A3A5C",
+        "text_color": "#FFFFFF",
+        "accent": "#E53935"
+      }
+    },
+    
+    "typography": {
+      "title": {
+        "color": "#1A3A5C",
+        "font_size": "44pt",
+        "font_weight": "bold"
+      },
+      "subtitle": {
+        "color": "#2E6B9E",
+        "font_size": "28pt",
+        "font_weight": "semibold"
+      },
+      "heading": {
+        "color": "#1A3A5C",
+        "font_size": "32pt",
+        "font_weight": "bold"
+      },
+      "body": {
+        "color": "#2D3748",
+        "font_size": "18pt",
+        "font_weight": "normal"
+      },
+      "caption": {
+        "color": "#4A5568",
+        "font_size": "14pt",
+        "font_weight": "normal"
+      }
+    },
+    
+    "chart_colors": [
+      "#1A3A5C",
+      "#2E6B9E", 
+      "#4A9BD9",
+      "#7BC4E8",
+      "#B8E0F5",
+      "#E53935"
+    ],
+    
+    "diagram_elements": {
+      "primary_shape": {
+        "fill": "#1A3A5C",
+        "text": "#FFFFFF"
+      },
+      "secondary_shape": {
+        "fill": "#4A9BD9",
+        "text": "#FFFFFF"
+      },
+      "tertiary_shape": {
+        "fill": "#7BC4E8",
+        "text": "#1A3A5C"
+      },
+      "accent_shape": {
+        "fill": "#E53935",
+        "text": "#FFFFFF"
+      },
+      "connector": {
+        "stroke": "#2E6B9E",
+        "stroke_width": "2px"
+      },
+      "network_node": {
+        "fill": "#4A9BD9",
+        "stroke": "#1A3A5C"
+      }
+    },
+    
+    "decorative_elements": {
+      "dots_pattern": "#7BC4E8",
+      "line_accent": "#E53935",
+      "circle_decoration": "linear-gradient(180deg, #7BC4E8, #2E6B9E)"
+    }
+  },
+  
+  "archimate_layer_mapping": {
+    "description": "将 DeepArchi 品牌色映射到 ArchiMate 四层架构",
+    "business_layer": {
+      "primary": "#1A3A5C",
+      "secondary": "#2E6B9E",
+      "note": "使用深蓝色系代替传统黄色，体现DeepArchi品牌"
+    },
+    "application_layer": {
+      "primary": "#4A9BD9",
+      "secondary": "#7BC4E8"
+    },
+    "data_layer": {
+      "primary": "#B8E0F5",
+      "secondary": "#E8F4FC"
+    },
+    "technology_layer": {
+      "primary": "#2E6B9E",
+      "secondary": "#4A9BD9"
+    },
+    "accent_elements": {
+      "highlight": "#E53935",
+      "warning": "#FF6B6B"
+    }
+  }
+}

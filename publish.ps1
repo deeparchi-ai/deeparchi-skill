@@ -100,12 +100,17 @@ if ($shouldCreateTag) {
         Write-Host "Cannot create tag: no commits found." -ForegroundColor Red
         $shouldCreateTag = $false
     } else {
-        git tag -a v1.0.0 -m "DeepArchi Skill v1.0.0 - Initial release"
-        if ($LASTEXITCODE -eq 0) {
-            Write-Host "Tag v1.0.0 created." -ForegroundColor Green
+        git tag -l "v1.0.0" 2>&1 | Out-Null
+        if ($LASTEXITCODE -eq 0 -and (git tag -l "v1.0.0")) {
+            Write-Host "Tag v1.0.0 already exists. Skipping." -ForegroundColor Yellow
         } else {
-            Write-Host "Tag creation failed." -ForegroundColor Red
-            $shouldCreateTag = $false
+            git tag -a v1.0.0 -m "DeepArchi Skill v1.0.0 - Initial release"
+            if ($LASTEXITCODE -eq 0) {
+                Write-Host "Tag v1.0.0 created." -ForegroundColor Green
+            } else {
+                Write-Host "Tag creation failed." -ForegroundColor Red
+                $shouldCreateTag = $false
+            }
         }
     }
 }
@@ -129,16 +134,22 @@ if ($shouldPush) {
 }
 
 if ($shouldPush) {
-    Write-Host "Pushing to GitHub..." -ForegroundColor Yellow
-    git push -u origin main 2>&1 | Out-Null
+    $currentBranch = "main"
+    try {
+        $branchOutput = git rev-parse --abbrev-ref HEAD 2>&1
+        if ($LASTEXITCODE -eq 0 -and $branchOutput) {
+            $currentBranch = $branchOutput.Trim()
+        }
+    } catch {
+        $currentBranch = "main"
+    }
+
+    Write-Host "Pushing to GitHub (branch: $currentBranch)..." -ForegroundColor Yellow
+    git push -u origin $currentBranch 2>&1 | Out-Null
     if ($LASTEXITCODE -eq 0) {
         Write-Host "Pushed to GitHub." -ForegroundColor Green
     } else {
-        Write-Host "Trying master branch..." -ForegroundColor Yellow
-        git push -u origin master 2>&1 | Out-Null
-        if ($LASTEXITCODE -ne 0) {
-            Write-Host "Push failed. Check remote URL and auth." -ForegroundColor Red
-        }
+        Write-Host "Push failed. Check remote URL and auth." -ForegroundColor Red
     }
     
     if ($shouldCreateTag) {

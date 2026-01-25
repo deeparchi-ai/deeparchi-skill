@@ -1,0 +1,473 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0" pages="6">
+  <diagram id="business-view" name="Business View">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="b_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=12;" value="BIAN Business View (Service Domains): customer, product, payments, cards, loans, risk, compliance, treasury, analytics. This page lists key business service domains without relationships; use as a domain inventory." vertex="1">
+          <mxGeometry height="30" width="900" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="b_role_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=role;archiType=square;fillColor=#FFF8DC;strokeColor=#666666;" value="Customer" vertex="1">
+          <mxGeometry height="50" width="160" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b_role_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=role;archiType=square;fillColor=#FFF8DC;strokeColor=#666666;" value="Relationship Manager" vertex="1">
+          <mxGeometry height="50" width="160" x="40" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="b_role_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=role;archiType=square;fillColor=#FFF8DC;strokeColor=#666666;" value="Risk Officer" vertex="1">
+          <mxGeometry height="50" width="160" x="40" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="b_role_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=role;archiType=square;fillColor=#FFF8DC;strokeColor=#666666;" value="Compliance" vertex="1">
+          <mxGeometry height="50" width="160" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="b_role_5" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=role;archiType=square;fillColor=#FFF8DC;strokeColor=#666666;" value="Operations" vertex="1">
+          <mxGeometry height="50" width="160" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="b_role_6" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=role;archiType=square;fillColor=#FFF8DC;strokeColor=#666666;" value="Treasury" vertex="1">
+          <mxGeometry height="50" width="160" x="40" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="b_proc_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;fillColor=#FFE699;strokeColor=#666666;" value="Customer Onboarding" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b_proc_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;fillColor=#FFE699;strokeColor=#666666;" value="KYC/AML Screening" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="b_proc_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;fillColor=#FFE699;strokeColor=#666666;" value="Account Opening" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="b_proc_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;fillColor=#FFE699;strokeColor=#666666;" value="Payment Execution" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="b_proc_5" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;fillColor=#FFE699;strokeColor=#666666;" value="Loan Origination" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="b_proc_6" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;fillColor=#FFE699;strokeColor=#666666;" value="Card Issuing" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="b_proc_7" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;fillColor=#FFE699;strokeColor=#666666;" value="Dispute Handling" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="b_srv_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Customer Management (BIAN)" vertex="1">
+          <mxGeometry height="50" width="260" x="500" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b_srv_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Party Data Management (BIAN)" vertex="1">
+          <mxGeometry height="50" width="260" x="500" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="b_srv_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Product Management (BIAN)" vertex="1">
+          <mxGeometry height="50" width="260" x="500" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="b_srv_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Payment Order (BIAN)" vertex="1">
+          <mxGeometry height="50" width="260" x="500" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="b_srv_5" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Card (BIAN)" vertex="1">
+          <mxGeometry height="50" width="260" x="500" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="b_srv_6" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Loan (BIAN)" vertex="1">
+          <mxGeometry height="50" width="260" x="500" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="b_srv_7" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Risk Management (BIAN)" vertex="1">
+          <mxGeometry height="50" width="260" x="500" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="b_srv_8" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Compliance (BIAN)" vertex="1">
+          <mxGeometry height="50" width="260" x="500" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="b_srv_9" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Treasury (BIAN)" vertex="1">
+          <mxGeometry height="50" width="260" x="500" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="b_srv_10" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Analytics (BIAN)" vertex="1">
+          <mxGeometry height="50" width="260" x="500" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="b_obj_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#F4B942;strokeColor=#666666;" value="Customer Profile" vertex="1">
+          <mxGeometry height="50" width="240" x="800" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b_obj_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#F4B942;strokeColor=#666666;" value="Account" vertex="1">
+          <mxGeometry height="50" width="240" x="800" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="b_obj_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#F4B942;strokeColor=#666666;" value="Payment Order" vertex="1">
+          <mxGeometry height="50" width="240" x="800" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="b_obj_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#F4B942;strokeColor=#666666;" value="Loan Contract" vertex="1">
+          <mxGeometry height="50" width="240" x="800" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="b_obj_5" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#F4B942;strokeColor=#666666;" value="Card" vertex="1">
+          <mxGeometry height="50" width="240" x="800" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="b_obj_6" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#F4B942;strokeColor=#666666;" value="Risk Policy" vertex="1">
+          <mxGeometry height="50" width="240" x="800" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="b_obj_7" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#F4B942;strokeColor=#666666;" value="Regulatory Report" vertex="1">
+          <mxGeometry height="50" width="240" x="800" y="420" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="application-view" name="Application View">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="a_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=12;" value="BIAN Application View: Application components and services mapped to BIAN service domains. Data elements moved to Data View." vertex="1">
+          <mxGeometry height="30" width="900" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="a_comp_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" value="Customer Channels" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a_comp_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" value="Customer Management System" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="a_comp_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" value="Party Data Management System" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="a_comp_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" value="Product Catalog System" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="a_comp_5" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" value="Account Management System" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="a_comp_6" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" value="Payment Hub" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="a_comp_7" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" value="Card Management System" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="a_comp_8" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" value="Loan Management System" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="a_comp_9" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" value="Risk Engine" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="a_comp_10" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" value="Compliance Reporting System" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="a_comp_11" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" value="Treasury System" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="a_srv_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Customer Management Service" vertex="1">
+          <mxGeometry height="50" width="260" x="320" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a_srv_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Party Data Service" vertex="1">
+          <mxGeometry height="50" width="260" x="320" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="a_srv_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Product Service" vertex="1">
+          <mxGeometry height="50" width="260" x="320" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="a_srv_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Account Service" vertex="1">
+          <mxGeometry height="50" width="260" x="320" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="a_srv_5" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Payment Service" vertex="1">
+          <mxGeometry height="50" width="260" x="320" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="a_srv_6" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Card Service" vertex="1">
+          <mxGeometry height="50" width="260" x="320" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="a_srv_7" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Loan Service" vertex="1">
+          <mxGeometry height="50" width="260" x="320" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="a_srv_8" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Risk Management Service" vertex="1">
+          <mxGeometry height="50" width="260" x="320" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="a_srv_9" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Compliance Service" vertex="1">
+          <mxGeometry height="50" width="260" x="320" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="a_srv_10" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Treasury Service" vertex="1">
+          <mxGeometry height="50" width="260" x="320" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="a_srv_11" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Analytics Service" vertex="1">
+          <mxGeometry height="50" width="260" x="320" y="660" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="data-view" name="Data View">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="d_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=12;" value="Data View: Data entities, data services, and databases supporting BIAN service domains. Use for data architecture and information management." vertex="1">
+          <mxGeometry height="30" width="900" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="d_obj_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" value="Customer Data" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d_obj_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" value="Party Data" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d_obj_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" value="Product Data" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="d_obj_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" value="Account Data" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="d_obj_5" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" value="Payment Data" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="d_obj_6" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" value="Card Data" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="d_obj_7" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" value="Loan Data" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="d_obj_8" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" value="Risk Data" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="d_obj_9" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" value="Regulatory Data" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="d_obj_10" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" value="Treasury Data" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="d_obj_11" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" value="Analytics Data" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="d_srv_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Customer Data Service" vertex="1">
+          <mxGeometry height="50" width="240" x="320" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d_srv_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Party Data Service" vertex="1">
+          <mxGeometry height="50" width="240" x="320" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d_srv_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Product Data Service" vertex="1">
+          <mxGeometry height="50" width="240" x="320" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="d_srv_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Account Data Service" vertex="1">
+          <mxGeometry height="50" width="240" x="320" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="d_srv_5" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Transaction Data Service" vertex="1">
+          <mxGeometry height="50" width="240" x="320" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="d_srv_6" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Risk Data Service" vertex="1">
+          <mxGeometry height="50" width="240" x="320" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="d_srv_7" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Reporting Data Service" vertex="1">
+          <mxGeometry height="50" width="240" x="320" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="d_srv_8" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Analytics Data Service" vertex="1">
+          <mxGeometry height="50" width="240" x="320" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="d_db_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#1976D2;strokeColor=#666666;fontColor=#FFFFFF;" value="Customer DB" vertex="1">
+          <mxGeometry height="50" width="200" x="600" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d_db_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#1976D2;strokeColor=#666666;fontColor=#FFFFFF;" value="Product DB" vertex="1">
+          <mxGeometry height="50" width="200" x="600" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d_db_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#1976D2;strokeColor=#666666;fontColor=#FFFFFF;" value="Account DB" vertex="1">
+          <mxGeometry height="50" width="200" x="600" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="d_db_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#1976D2;strokeColor=#666666;fontColor=#FFFFFF;" value="Transaction DB" vertex="1">
+          <mxGeometry height="50" width="200" x="600" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="d_db_5" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#1976D2;strokeColor=#666666;fontColor=#FFFFFF;" value="Risk DB" vertex="1">
+          <mxGeometry height="50" width="200" x="600" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="d_db_6" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#1976D2;strokeColor=#666666;fontColor=#FFFFFF;" value="Data Warehouse" vertex="1">
+          <mxGeometry height="50" width="200" x="600" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="d_db_7" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#1976D2;strokeColor=#666666;fontColor=#FFFFFF;" value="Data Lake" vertex="1">
+          <mxGeometry height="50" width="200" x="600" y="420" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="technology-view" name="Technology View">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=12;" value="Technology View: shared platforms supporting BIAN service domains. No relationships shown; use for infrastructure inventory." vertex="1">
+          <mxGeometry height="30" width="900" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="t_node_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=node;archiType=square;fillColor=#7CB342;strokeColor=#666666;" value="API Gateway Cluster" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t_node_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=node;archiType=square;fillColor=#7CB342;strokeColor=#666666;" value="Application Cluster" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="t_node_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=node;archiType=square;fillColor=#7CB342;strokeColor=#666666;" value="Database Cluster" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="t_node_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=node;archiType=square;fillColor=#7CB342;strokeColor=#666666;" value="Integration Platform" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="t_node_5" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=node;archiType=square;fillColor=#7CB342;strokeColor=#666666;" value="Security Platform" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="t_node_6" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=node;archiType=square;fillColor=#7CB342;strokeColor=#666666;" value="Data Platform" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="t_node_7" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=node;archiType=square;fillColor=#7CB342;strokeColor=#666666;" value="Observability Platform" vertex="1">
+          <mxGeometry height="50" width="240" x="40" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;fillColor=#AED581;strokeColor=#666666;" value="Kubernetes" vertex="1">
+          <mxGeometry height="50" width="200" x="320" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;fillColor=#AED581;strokeColor=#666666;" value="Service Mesh" vertex="1">
+          <mxGeometry height="50" width="200" x="320" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;fillColor=#AED581;strokeColor=#666666;" value="RDBMS" vertex="1">
+          <mxGeometry height="50" width="200" x="320" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;fillColor=#AED581;strokeColor=#666666;" value="Cache" vertex="1">
+          <mxGeometry height="50" width="200" x="320" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_5" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;fillColor=#AED581;strokeColor=#666666;" value="Message Broker" vertex="1">
+          <mxGeometry height="50" width="200" x="320" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_6" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;fillColor=#AED581;strokeColor=#666666;" value="IAM" vertex="1">
+          <mxGeometry height="50" width="200" x="320" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_7" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;fillColor=#AED581;strokeColor=#666666;" value="ETL/ELT" vertex="1">
+          <mxGeometry height="50" width="200" x="320" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_8" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;fillColor=#AED581;strokeColor=#666666;" value="Monitoring" vertex="1">
+          <mxGeometry height="50" width="200" x="320" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="t_srv_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;" value="API Management" vertex="1">
+          <mxGeometry height="50" width="220" x="560" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t_srv_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;" value="Messaging" vertex="1">
+          <mxGeometry height="50" width="220" x="560" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="t_srv_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;" value="Data Storage" vertex="1">
+          <mxGeometry height="50" width="220" x="560" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="t_srv_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;" value="Identity &amp; Access" vertex="1">
+          <mxGeometry height="50" width="220" x="560" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="t_srv_5" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;" value="Observability" vertex="1">
+          <mxGeometry height="50" width="220" x="560" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="t_srv_6" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;" value="Compute" vertex="1">
+          <mxGeometry height="50" width="220" x="560" y="360" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="cross-layer" name="Cross Layer View">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=12;" value="Cross Layer View: Representative elements across Business, Application, Data, and Technology layers. Shows vertical alignment of capabilities." vertex="1">
+          <mxGeometry height="30" width="1100" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="c_bsrv_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Customer Management (BIAN)" vertex="1">
+          <mxGeometry height="50" width="220" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_bsrv_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Payment Order (BIAN)" vertex="1">
+          <mxGeometry height="50" width="220" x="40" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c_bsrv_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Loan (BIAN)" vertex="1">
+          <mxGeometry height="50" width="220" x="40" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c_bsrv_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Risk Management (BIAN)" vertex="1">
+          <mxGeometry height="50" width="220" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="c_asrv_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Customer Mgmt Service" vertex="1">
+          <mxGeometry height="50" width="220" x="300" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_asrv_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Payment Service" vertex="1">
+          <mxGeometry height="50" width="220" x="300" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c_asrv_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Loan Service" vertex="1">
+          <mxGeometry height="50" width="220" x="300" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c_asrv_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="Risk Mgmt Service" vertex="1">
+          <mxGeometry height="50" width="220" x="300" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="c_dsrv_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Customer Data Service" vertex="1">
+          <mxGeometry height="50" width="220" x="560" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_dsrv_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Transaction Data Service" vertex="1">
+          <mxGeometry height="50" width="220" x="560" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c_dsrv_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Account Data Service" vertex="1">
+          <mxGeometry height="50" width="220" x="560" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c_dsrv_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Risk Data Service" vertex="1">
+          <mxGeometry height="50" width="220" x="560" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="c_tsrv_1" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;" value="API Management" vertex="1">
+          <mxGeometry height="50" width="220" x="820" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_tsrv_2" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;" value="Data Storage" vertex="1">
+          <mxGeometry height="50" width="220" x="820" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c_tsrv_3" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;" value="Identity &amp; Access" vertex="1">
+          <mxGeometry height="50" width="220" x="820" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c_tsrv_4" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;" value="Observability" vertex="1">
+          <mxGeometry height="50" width="220" x="820" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="c_label_b" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;fontColor=#B8860B;" value="Business Layer" vertex="1">
+          <mxGeometry height="20" width="220" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="c_label_a" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;fontColor=#2E7D32;" value="Application Layer" vertex="1">
+          <mxGeometry height="20" width="220" x="300" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="c_label_d" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;fontColor=#1565C0;" value="Data Layer" vertex="1">
+          <mxGeometry height="20" width="220" x="560" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="c_label_t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;fontColor=#558B2F;" value="Technology Layer" vertex="1">
+          <mxGeometry height="20" width="220" x="820" y="300" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="legend" name="Legend">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="l_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=12;" value="Legend: colors and shapes used in this model (ArchiMate 3.2). No relationships shown." vertex="1">
+          <mxGeometry height="30" width="900" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="l_business_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" value="Business Layer (业务层)" vertex="1">
+          <mxGeometry height="20" width="260" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l_business_role" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=role;archiType=square;fillColor=#FFF8DC;strokeColor=#666666;" value="Business Role (业务角色)" vertex="1">
+          <mxGeometry height="50" width="220" x="40" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="l_business_proc" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;fillColor=#FFE699;strokeColor=#666666;" value="Business Process (业务过程)" vertex="1">
+          <mxGeometry height="50" width="220" x="40" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="l_business_serv" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" value="Business Service (业务服务)" vertex="1">
+          <mxGeometry height="50" width="220" x="40" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="l_business_obj" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#F4B942;strokeColor=#666666;" value="Business Object (业务对象)" vertex="1">
+          <mxGeometry height="50" width="220" x="40" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="l_app_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" value="Application Layer (应用层)" vertex="1">
+          <mxGeometry height="20" width="260" x="300" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l_app_comp" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" value="App Component (应用组件)" vertex="1">
+          <mxGeometry height="50" width="200" x="300" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="l_app_serv" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" value="App Service (应用服务)" vertex="1">
+          <mxGeometry height="50" width="200" x="300" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="l_data_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" value="Data Layer (数据层)" vertex="1">
+          <mxGeometry height="20" width="200" x="540" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l_data_obj" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" value="Data Object (数据对象)" vertex="1">
+          <mxGeometry height="50" width="200" x="540" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="l_data_serv" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" value="Data Service (数据服务)" vertex="1">
+          <mxGeometry height="50" width="200" x="540" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="l_data_db" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#1976D2;strokeColor=#666666;fontColor=#FFFFFF;" value="Database (数据库)" vertex="1">
+          <mxGeometry height="50" width="200" x="540" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="l_tech_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" value="Technology Layer (技术层)" vertex="1">
+          <mxGeometry height="20" width="260" x="780" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l_tech_node" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=node;archiType=square;fillColor=#7CB342;strokeColor=#666666;" value="Tech Node (技术节点)" vertex="1">
+          <mxGeometry height="50" width="200" x="780" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="l_tech_sys" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;fillColor=#AED581;strokeColor=#666666;" value="System Software (系统软件)" vertex="1">
+          <mxGeometry height="50" width="200" x="780" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="l_tech_serv" parent="1" style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;" value="Tech Service (技术服务)" vertex="1">
+          <mxGeometry height="50" width="200" x="780" y="210" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepArchi 深度架构 - 企业架构管理平台</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ==================== CSS Variables ==================== */
+    :root {
+      --da-primary: #1A3A5C;
+      --da-primary-light: #2E6B9E;
+      --da-primary-lighter: #4A9BD9;
+      --da-secondary: #7BC4E8;
+      --da-secondary-light: #B8E0F5;
+      --da-secondary-lighter: #E8F4FC;
+      --da-accent: #E53935;
+      --da-accent-light: #FF6B6B;
+      --da-text: #2D3748;
+      --da-text-secondary: #4A5568;
+      --da-text-muted: #A0AEC0;
+      --da-border: #EDF2F7;
+      --da-white: #FFFFFF;
+      --da-gradient-primary: linear-gradient(135deg, #1A3A5C 0%, #2E6B9E 50%, #4A9BD9 100%);
+      --da-gradient-network: linear-gradient(180deg, #7BC4E8 0%, #4A9BD9 50%, #2E6B9E 100%);
+      --da-shadow: 0 4px 6px -1px rgba(26, 58, 92, 0.1);
+      --da-shadow-lg: 0 20px 25px -5px rgba(26, 58, 92, 0.15);
+    }
+
+    /* ==================== Reset & Base ==================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--da-text);
+      line-height: 1.6;
+      background: var(--da-white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==================== Navigation ==================== */
+    .navbar {
+      background: var(--da-white);
+      border-bottom: 1px solid var(--da-border);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .navbar-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .navbar-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--da-primary);
+    }
+
+    .navbar-title .dot {
+      position: relative;
+      color: var(--da-primary);
+      display: inline-block;
+      font-size: 0;
+      line-height: 1;
+      vertical-align: baseline;
+    }
+
+    .navbar-title .dot::before {
+      content: 'i';
+      font-size: 20px;
+      color: var(--da-primary);
+      display: inline-block;
+      vertical-align: baseline;
+    }
+
+    .navbar-title .dot::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 5px;
+      height: 5px;
+      background: var(--da-accent);
+      border-radius: 50%;
+      margin-top: 0.05em;
+    }
+
+    .navbar-subtitle {
+      font-size: 12px;
+      color: var(--da-text-secondary);
+      font-weight: 500;
+    }
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-link {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--da-text-secondary);
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--da-primary);
+    }
+
+    .navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* ==================== Buttons ==================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--da-primary);
+      color: var(--da-white);
+    }
+
+    .btn-primary:hover {
+      background: var(--da-primary-light);
+      box-shadow: var(--da-shadow);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--da-primary);
+      border: 2px solid var(--da-primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--da-secondary-lighter);
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, var(--da-accent) 0%, var(--da-accent-light) 100%);
+      color: var(--da-white);
+    }
+
+    .btn-accent:hover {
+      box-shadow: 0 4px 15px rgba(229, 57, 53, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--da-primary);
+      padding: 12px 16px;
+    }
+
+    .btn-ghost:hover {
+      background: var(--da-secondary-lighter);
+    }
+
+    .btn-lg {
+      padding: 16px 32px;
+      font-size: 16px;
+    }
+
+    /* ==================== Hero Section ==================== */
+    .hero {
+      padding: 160px 0 100px;
+      background: linear-gradient(180deg, var(--da-white) 0%, var(--da-secondary-lighter) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 60%;
+      height: 140%;
+      background: var(--da-gradient-network);
+      opacity: 0.08;
+      border-radius: 50%;
+      filter: blur(60px);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--da-white);
+      border: 1px solid var(--da-border);
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--da-primary);
+      margin-bottom: 24px;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--da-accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .hero-title {
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--da-primary);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .hero-title-accent {
+      background: var(--da-gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-description {
+      font-size: 18px;
+      color: var(--da-text-secondary);
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+    }
+
+    .stat-item {
+      text-align: left;
+    }
+
+    .stat-value {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--da-primary);
+    }
+
+    .stat-value span {
+      color: var(--da-accent);
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--da-text-muted);
+    }
+
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+      overflow: visible;
+    }
+
+    .hero-diagram-container {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(26, 58, 92, 0.15), 0 0 0 1px var(--da-border);
+      border: 1px solid var(--da-border);
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin: 0;
+      background: var(--da-white);
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .hero-diagram-container:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 80px rgba(26, 58, 92, 0.2), 0 0 0 1px var(--da-border);
+    }
+
+    .hero-diagram-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .hero-diagram-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--da-primary);
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-diagram-layers {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-diagram-layer {
+      display: flex;
+      align-items: center;
+      padding: 16px 24px;
+      background: var(--da-white);
+      border-radius: 12px;
+      border-left: 4px solid;
+      transition: all 0.3s;
+      box-shadow: 0 2px 4px rgba(26, 58, 92, 0.05);
+    }
+
+    .hero-diagram-layer:hover {
+      transform: translateX(8px);
+      box-shadow: 0 8px 16px rgba(26, 58, 92, 0.1);
+      background: var(--da-secondary-lighter);
+    }
+
+    .hero-diagram-layer-business {
+      border-left-color: #F4B942;
+    }
+
+    .hero-diagram-layer-application {
+      border-left-color: #66BB6A;
+    }
+
+    .hero-diagram-layer-data {
+      border-left-color: #4A9BD9;
+    }
+
+    .hero-diagram-layer-technology {
+      border-left-color: #7CB342;
+    }
+
+    .hero-diagram-layer-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-right: 16px;
+      color: white;
+    }
+
+    .hero-diagram-layer-business .hero-diagram-layer-icon {
+      background: linear-gradient(135deg, #F4B942 0%, #FFD54F 100%);
+    }
+
+    .hero-diagram-layer-application .hero-diagram-layer-icon {
+      background: linear-gradient(135deg, #66BB6A 0%, #81C784 100%);
+    }
+
+    .hero-diagram-layer-data .hero-diagram-layer-icon {
+      background: linear-gradient(135deg, #4A9BD9 0%, #64B5F6 100%);
+    }
+
+    .hero-diagram-layer-technology .hero-diagram-layer-icon {
+      background: linear-gradient(135deg, #7CB342 0%, #9CCC65 100%);
+    }
+
+    .hero-diagram-layer-text {
+      flex: 1;
+    }
+
+    .hero-diagram-layer-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--da-primary);
+      margin-bottom: 4px;
+    }
+
+    .hero-diagram-layer-desc {
+      font-size: 13px;
+      color: var(--da-text-secondary);
+    }
+
+    .hero-diagram-network {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-diagram-network-dot {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: var(--da-primary);
+      border-radius: 50%;
+      animation: pulse-dot 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+      }
+    }
+
+    .hero-diagram-network-line {
+      position: absolute;
+      height: 1px;
+      background: var(--da-primary);
+    }
+
+    .hero-diagram-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--da-white);
+      border: 1px solid var(--da-border);
+      border-radius: 20px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--da-primary);
+      z-index: 2;
+      box-shadow: 0 2px 4px rgba(26, 58, 92, 0.1);
+    }
+
+    .hero-diagram-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--da-border);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-diagram-stat {
+      text-align: center;
+    }
+
+    .hero-diagram-stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--da-primary);
+      margin-bottom: 4px;
+    }
+
+    .hero-diagram-stat-label {
+      font-size: 12px;
+      color: var(--da-text-secondary);
+    }
+
+
+    .hero-diagram-layer {
+      animation: fadeInUp 0.6s ease-out backwards;
+    }
+
+    .hero-diagram-layer:nth-child(1) { animation-delay: 0.1s; }
+    .hero-diagram-layer:nth-child(2) { animation-delay: 0.2s; }
+    .hero-diagram-layer:nth-child(3) { animation-delay: 0.3s; }
+    .hero-diagram-layer:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    /* ==================== Features Section ==================== */
+    .features {
+      padding: 100px 0;
+      background: var(--da-white);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--da-secondary-lighter);
+      color: var(--da-primary);
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--da-primary);
+      margin-bottom: 16px;
+    }
+
+    .section-description {
+      font-size: 18px;
+      color: var(--da-text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: var(--da-white);
+      border: 1px solid var(--da-border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      box-shadow: var(--da-shadow-lg);
+      transform: translateY(-4px);
+      border-color: var(--da-secondary);
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .feature-icon-1 { background: linear-gradient(135deg, #1A3A5C 0%, #2E6B9E 100%); color: white; }
+    .feature-icon-2 { background: linear-gradient(135deg, #4A9BD9 0%, #7BC4E8 100%); color: white; }
+    .feature-icon-3 { background: linear-gradient(135deg, #E53935 0%, #FF6B6B 100%); color: white; }
+    .feature-icon-4 { background: linear-gradient(135deg, #38A169 0%, #68D391 100%); color: white; }
+    .feature-icon-5 { background: linear-gradient(135deg, #D69E2E 0%, #F6E05E 100%); color: white; }
+    .feature-icon-6 { background: linear-gradient(135deg, #805AD5 0%, #B794F4 100%); color: white; }
+
+    .feature-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--da-primary);
+      margin-bottom: 12px;
+    }
+
+    .feature-description {
+      font-size: 15px;
+      color: var(--da-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ==================== Architecture Section ==================== */
+    .architecture {
+      padding: 100px 0;
+      background: var(--da-secondary-lighter);
+    }
+
+    .arch-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .arch-content {
+      order: 2;
+    }
+
+    .arch-visual {
+      order: 1;
+    }
+
+    .arch-layers {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .arch-layer {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--da-white);
+      border-radius: 12px;
+      border-left: 4px solid;
+      box-shadow: var(--da-shadow);
+      transition: transform 0.2s;
+    }
+
+    .arch-layer:hover {
+      transform: translateX(8px);
+    }
+
+    .arch-layer-business { border-color: #F4B942; }
+    .arch-layer-application { border-color: #66BB6A; }
+    .arch-layer-data { border-color: #4A9BD9; }
+    .arch-layer-technology { border-color: #7CB342; }
+
+    .arch-layer-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+    }
+
+    .arch-layer-business .arch-layer-icon { background: #F4B942; }
+    .arch-layer-application .arch-layer-icon { background: #66BB6A; }
+    .arch-layer-data .arch-layer-icon { background: #4A9BD9; }
+    .arch-layer-technology .arch-layer-icon { background: #7CB342; }
+
+    .arch-layer-info {
+      flex: 1;
+    }
+
+    .arch-layer-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--da-primary);
+    }
+
+    .arch-layer-desc {
+      font-size: 13px;
+      color: var(--da-text-secondary);
+    }
+
+    .arch-list {
+      list-style: none;
+      margin-top: 32px;
+    }
+
+    .arch-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: var(--da-text-secondary);
+    }
+
+    .arch-list-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--da-primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ==================== Skills Section ==================== */
+    .skills {
+      padding: 100px 0;
+      background: var(--da-white);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 24px;
+    }
+
+    .skill-card {
+      background: var(--da-white);
+      border: 1px solid var(--da-border);
+      border-radius: 12px;
+      padding: 24px 16px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .skill-card:hover {
+      border-color: var(--da-primary-lighter);
+      box-shadow: var(--da-shadow);
+      transform: translateY(-2px);
+    }
+
+    .skill-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 12px;
+      border-radius: 12px;
+      background: var(--da-secondary-lighter);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--da-primary);
+    }
+
+    .skill-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--da-primary);
+      margin-bottom: 4px;
+    }
+
+    .skill-desc {
+      font-size: 12px;
+      color: var(--da-text-muted);
+    }
+
+    /* ==================== CTA Section ==================== */
+    .cta {
+      padding: 100px 0;
+      background: var(--da-gradient-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    }
+
+    .cta-inner {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-title {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--da-white);
+      margin-bottom: 16px;
+    }
+
+    .cta-description {
+      font-size: 18px;
+      color: var(--da-secondary-light);
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .btn-white {
+      background: var(--da-white);
+      color: var(--da-primary);
+    }
+
+    .btn-white:hover {
+      background: var(--da-secondary-lighter);
+      box-shadow: var(--da-shadow-lg);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--da-white);
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--da-white);
+    }
+
+    /* ==================== Footer ==================== */
+    .footer {
+      background: var(--da-primary);
+      color: var(--da-white);
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand {
+      max-width: 300px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .footer-logo-text {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .footer-logo-text .dot {
+      position: relative;
+      color: var(--da-white);
+      display: inline-block;
+      font-size: 0;
+      line-height: 1;
+      vertical-align: baseline;
+    }
+
+    .footer-logo-text .dot::before {
+      content: 'i';
+      font-size: 20px;
+      color: var(--da-white);
+      display: inline-block;
+      vertical-align: baseline;
+    }
+
+    .footer-logo-text .dot::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 5px;
+      height: 5px;
+      background: var(--da-accent);
+      border-radius: 50%;
+      margin-top: 0.05em;
+    }
+
+    .footer-description {
+      font-size: 14px;
+      color: var(--da-secondary-light);
+      line-height: 1.7;
+    }
+
+    .footer-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--da-secondary);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: var(--da-secondary-light);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--da-white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      font-size: 13px;
+      color: var(--da-secondary-light);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--da-secondary-light);
+      transition: all 0.2s;
+    }
+
+    .footer-social a:hover {
+      background: var(--da-accent);
+      color: var(--da-white);
+    }
+
+    /* ==================== Responsive ==================== */
+    @media (max-width: 1024px) {
+      .hero-inner, .arch-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-visual {
+        order: -1;
+      }
+
+      .hero-diagram-container {
+        margin: 0;
+      }
+      
+      .arch-content, .arch-visual {
+        order: unset;
+      }
+      
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar-nav {
+        display: none;
+      }
+      
+      .hero-title {
+        font-size: 36px;
+      }
+
+      .hero-diagram-container {
+        margin: 0;
+      }
+      
+      .hero-stats {
+        flex-direction: column;
+        gap: 24px;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .cta-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="navbar-brand">
+        <img src="logo-network-sphere.png" alt="DeepArchi Logo" class="navbar-logo">
+        <div>
+          <div class="navbar-title">DeepArch<span class="dot">i</span></div>
+          <div class="navbar-subtitle">深度架构</div>
+        </div>
+      </a>
+      
+      <div class="navbar-nav">
+        <a href="#features" class="nav-link">产品功能</a>
+        <a href="#architecture" class="nav-link">架构框架</a>
+        <a href="#skills" class="nav-link">技能库</a>
+        <a href="#" class="nav-link">文档中心</a>
+        <a href="#" class="nav-link">关于我们</a>
+      </div>
+      
+      <div class="navbar-actions">
+        <button class="btn btn-ghost">登录</button>
+        <button class="btn btn-primary">免费试用</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          基于 ArchiMate 3.2 标准
+        </div>
+        <h1 class="hero-title">
+          智能化<span class="hero-title-accent">企业架构</span><br>管理平台
+        </h1>
+        <p class="hero-description">
+          DeepArchi 深度架构平台，集成 TOGAF、BIAN、DDD、BPMN、IT4IT 等主流框架，为企业提供一站式架构设计、建模、治理解决方案。
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-accent btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            开始使用
+          </button>
+          <button class="btn btn-secondary btn-lg">查看演示</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-value">7<span>+</span></div>
+            <div class="stat-label">集成技能</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">100<span>+</span></div>
+            <div class="stat-label">架构元素</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">4</div>
+            <div class="stat-label">架构层次</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-diagram-container">
+          <img src="architecture-diagram.jpg" alt="企业架构图" class="hero-diagram-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">核心功能</span>
+        <h2 class="section-title">全面的架构管理能力</h2>
+        <p class="section-description">从战略规划到技术实现，DeepArchi 提供端到端的企业架构管理工具链</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon feature-icon-1">🏗️</div>
+          <h3 class="feature-title">可视化建模</h3>
+          <p class="feature-description">基于 Draw.io 的可视化架构建模工具，支持 ArchiMate 3.2 标准元素和关系类型。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon feature-icon-2">🔗</div>
+          <h3 class="feature-title">多框架集成</h3>
+          <p class="feature-description">无缝集成 TOGAF ADM、BIAN、DDD、BPMN、IT4IT 等主流企业架构框架。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon feature-icon-3">🎯</div>
+          <h3 class="feature-title">智能辅助</h3>
+          <p class="feature-description">AI 驱动的架构建议，自动识别最佳实践，提供架构优化建议。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon feature-icon-4">📋</div>
+          <h3 class="feature-title">架构治理</h3>
+          <p class="feature-description">完整的架构资产管理，版本控制，变更追溯和合规性检查。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon feature-icon-5">📊</div>
+          <h3 class="feature-title">分析报告</h3>
+          <p class="feature-description">自动生成架构分析报告，差距分析，影响评估和迁移规划。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon feature-icon-6">🤝</div>
+          <h3 class="feature-title">团队协作</h3>
+          <p class="feature-description">支持多人实时协作，评审工作流，注释和反馈管理。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Section -->
+  <section class="architecture" id="architecture">
+    <div class="container">
+      <div class="arch-grid">
+        <div class="arch-visual">
+          <div class="arch-layers">
+            <div class="arch-layer arch-layer-business">
+              <div class="arch-layer-icon">💼</div>
+              <div class="arch-layer-info">
+                <div class="arch-layer-title">业务层 Business Layer</div>
+                <div class="arch-layer-desc">业务角色、流程、服务、对象</div>
+              </div>
+            </div>
+            <div class="arch-layer arch-layer-application">
+              <div class="arch-layer-icon">📱</div>
+              <div class="arch-layer-info">
+                <div class="arch-layer-title">应用层 Application Layer</div>
+                <div class="arch-layer-desc">应用组件、服务、接口</div>
+              </div>
+            </div>
+            <div class="arch-layer arch-layer-data">
+              <div class="arch-layer-icon">🗄️</div>
+              <div class="arch-layer-info">
+                <div class="arch-layer-title">数据层 Data Layer</div>
+                <div class="arch-layer-desc">数据对象、服务、数据库</div>
+              </div>
+            </div>
+            <div class="arch-layer arch-layer-technology">
+              <div class="arch-layer-icon">⚙️</div>
+              <div class="arch-layer-info">
+                <div class="arch-layer-title">技术层 Technology Layer</div>
+                <div class="arch-layer-desc">节点、系统软件、基础设施</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="arch-content">
+          <span class="section-tag">架构框架</span>
+          <h2 class="section-title">四层架构模型</h2>
+          <p class="section-description">遵循 ArchiMate 3.2 标准的分层架构，清晰定义业务到技术的映射关系</p>
+          <ul class="arch-list">
+            <li>
+              <span class="arch-list-icon">✓</span>
+              <span>深浅渐变色区分元素类型，增强视觉层次</span>
+            </li>
+            <li>
+              <span class="arch-list-icon">✓</span>
+              <span>标准化的 Draw.io XML 样式，确保一致性</span>
+            </li>
+            <li>
+              <span class="arch-list-icon">✓</span>
+              <span>跨层视图展示垂直能力对齐关系</span>
+            </li>
+            <li>
+              <span class="arch-list-icon">✓</span>
+              <span>支持 BIAN 银行业服务域映射</span>
+            </li>
+          </ul>
+          <button class="btn btn-primary" style="margin-top: 24px;">了解更多</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">技能库</span>
+        <h2 class="section-title">集成专业技能</h2>
+        <p class="section-description">丰富的架构技能库，覆盖企业架构全生命周期</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">📐</div>
+          <div class="skill-name">ArchiMate</div>
+          <div class="skill-desc">建模语言</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🎯</div>
+          <div class="skill-name">TOGAF</div>
+          <div class="skill-desc">架构框架</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🏦</div>
+          <div class="skill-name">BIAN</div>
+          <div class="skill-desc">银行架构</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🧩</div>
+          <div class="skill-name">DDD</div>
+          <div class="skill-desc">领域驱动</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🔄</div>
+          <div class="skill-name">BPMN</div>
+          <div class="skill-desc">流程建模</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🖥️</div>
+          <div class="skill-name">IT4IT</div>
+          <div class="skill-desc">IT管理</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📊</div>
+          <div class="skill-name">Draw.io</div>
+          <div class="skill-desc">图表绘制</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2 class="cta-title">开启智能架构之旅</h2>
+      <p class="cta-description">立即体验 DeepArchi 深度架构平台，构建企业级架构管理能力</p>
+      <div class="cta-actions">
+        <button class="btn btn-white btn-lg">免费试用</button>
+        <button class="btn btn-outline-white btn-lg">联系我们</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="logo-network-sphere.png" alt="DeepArchi Logo" width="32" height="32" style="filter: brightness(1.2);">
+            <span class="footer-logo-text">DeepArch<span class="dot">i</span></span>
+          </div>
+          <p class="footer-description">
+            DeepArchi 深度架构平台，致力于为企业提供专业的架构管理解决方案，助力数字化转型。
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-title">产品</h4>
+          <ul class="footer-links">
+            <li><a href="#">功能介绍</a></li>
+            <li><a href="#">技能库</a></li>
+            <li><a href="#">定价方案</a></li>
+            <li><a href="#">更新日志</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">资源</h4>
+          <ul class="footer-links">
+            <li><a href="#">文档中心</a></li>
+            <li><a href="#">API 参考</a></li>
+            <li><a href="#">架构模板</a></li>
+            <li><a href="#">最佳实践</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">公司</h4>
+          <ul class="footer-links">
+            <li><a href="#">关于我们</a></li>
+            <li><a href="#">联系方式</a></li>
+            <li><a href="#">隐私政策</a></li>
+            <li><a href="#">服务条款</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2025 DeepArchi 深度架构. All rights reserved. | 
+          <a href="https://www.deeparchi.com.cn" style="color: var(--da-secondary);">www.deeparchi.com.cn</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="#" title="微信">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 01-.023-.156.49.49 0 01.201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.02-.406-.032zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.982.969-.982z"/>
+            </svg>
+          </a>
+          <a href="#" title="邮箱">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
