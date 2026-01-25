@@ -1,22 +1,32 @@
 {
   "archimateColors": {
     "business": {
-      "light": "#FFF2CC",
-      "medium": "#FFE699",
-      "dark": "#FFD966",
-      "description": "业务层颜色 - 黄色系"
+      "role": "#FFF8DC",
+      "process": "#FFE699",
+      "service": "#FFD54F",
+      "object": "#F4B942",
+      "description": "业务层颜色 - 黄色系（从浅到深）",
+      "gradient": ["#FFF8DC", "#FFE699", "#FFD54F", "#F4B942"]
     },
     "application": {
-      "light": "#D5E8D4",
-      "medium": "#B3D9B2",
-      "dark": "#97D077",
-      "description": "应用层颜色 - 绿色系"
+      "service": "#E8F5E9",
+      "component": "#66BB6A",
+      "description": "应用层颜色 - 绿色系（从浅到深）",
+      "gradient": ["#E8F5E9", "#66BB6A"]
+    },
+    "data": {
+      "object": "#BBDEFB",
+      "service": "#64B5F6",
+      "database": "#1976D2",
+      "description": "数据层颜色 - 蓝色系（从浅到深）",
+      "gradient": ["#BBDEFB", "#64B5F6", "#1976D2"]
     },
     "technology": {
-      "light": "#D5E8D4",
-      "medium": "#B3D9B2",
-      "dark": "#97D077",
-      "description": "技术层颜色 - 绿色系"
+      "service": "#DCEDC8",
+      "systemSoftware": "#AED581",
+      "node": "#7CB342",
+      "description": "技术层颜色 - 绿色系（从浅到深）",
+      "gradient": ["#DCEDC8", "#AED581", "#7CB342"]
     },
     "motivation": {
       "light": "#E1D5E7",
@@ -31,19 +41,111 @@
       "description": "实施与迁移层颜色 - 灰色系"
     }
   },
-  "relationshipColors": {
-    "structural": {
-      "solid": "#000000",
-      "description": "结构关系 - 实线"
+  "elementStyles": {
+    "business": {
+      "role": {
+        "fillColor": "#FFF8DC",
+        "appType": "role",
+        "description": "业务角色 - 最浅黄"
+      },
+      "process": {
+        "fillColor": "#FFE699",
+        "appType": "proc",
+        "description": "业务过程 - 浅黄"
+      },
+      "service": {
+        "fillColor": "#FFD54F",
+        "appType": "serv",
+        "description": "业务服务 - 中黄"
+      },
+      "object": {
+        "fillColor": "#F4B942",
+        "appType": "passive",
+        "description": "业务对象 - 深黄"
+      }
     },
-    "dynamic": {
-      "dashed": "#666666",
-      "description": "动态关系 - 虚线"
+    "application": {
+      "component": {
+        "fillColor": "#66BB6A",
+        "appType": "comp",
+        "description": "应用组件 - 深绿"
+      },
+      "service": {
+        "fillColor": "#E8F5E9",
+        "appType": "serv",
+        "description": "应用服务 - 浅绿"
+      }
+    },
+    "data": {
+      "object": {
+        "fillColor": "#BBDEFB",
+        "appType": "passive",
+        "description": "数据对象 - 浅蓝"
+      },
+      "service": {
+        "fillColor": "#64B5F6",
+        "appType": "serv",
+        "description": "数据服务 - 中蓝"
+      },
+      "database": {
+        "fillColor": "#1976D2",
+        "appType": "comp",
+        "fontColor": "#FFFFFF",
+        "description": "数据库 - 深蓝（白字）"
+      }
+    },
+    "technology": {
+      "node": {
+        "fillColor": "#7CB342",
+        "appType": "node",
+        "description": "技术节点 - 深绿"
+      },
+      "systemSoftware": {
+        "fillColor": "#AED581",
+        "appType": "sysSw",
+        "description": "系统软件 - 中绿"
+      },
+      "service": {
+        "fillColor": "#DCEDC8",
+        "appType": "serv",
+        "description": "技术服务 - 浅绿"
+      }
     }
   },
+  "drawioStyles": {
+    "baseStyle": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;",
+    "squareArchiType": "archiType=square;",
+    "roundedArchiType": "archiType=rounded;",
+    "strokeColor": "strokeColor=#666666;",
+    "example": {
+      "businessRole": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=role;archiType=square;fillColor=#FFF8DC;strokeColor=#666666;",
+      "businessProcess": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;fillColor=#FFE699;strokeColor=#666666;",
+      "businessService": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;",
+      "businessObject": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#F4B942;strokeColor=#666666;",
+      "appComponent": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;",
+      "appService": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;",
+      "dataObject": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;",
+      "dataService": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;",
+      "database": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#1976D2;strokeColor=#666666;fontColor=#FFFFFF;",
+      "techNode": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=node;archiType=square;fillColor=#7CB342;strokeColor=#666666;",
+      "techSysSw": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;fillColor=#AED581;strokeColor=#666666;",
+      "techService": "html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;"
+    }
+  },
+  "appTypeMapping": {
+    "role": "业务角色 (Business Role)",
+    "proc": "业务过程 (Business Process)",
+    "serv": "服务 (Service)",
+    "passive": "被动元素/对象 (Passive/Object)",
+    "comp": "组件 (Component)",
+    "node": "节点 (Node)",
+    "sysSw": "系统软件 (System Software)",
+    "actor": "参与者 (Actor)"
+  },
   "usage": {
-    "note": "这些颜色符合 ArchiMate 3.2 标准规范",
-    "drawio": "在 draw.io 中使用这些颜色代码设置元素填充色",
-    "hexFormat": "所有颜色使用十六进制格式，可直接用于 CSS 和 draw.io"
+    "note": "这些颜色和样式经过实践验证，可在 Draw.io 中正确显示 ArchiMate 图标",
+    "drawio": "在 draw.io XML 中使用 shape=mxgraph.archimate3.application 配合 appType 参数",
+    "hexFormat": "所有颜色使用十六进制格式，可直接用于 CSS 和 draw.io",
+    "colorGradient": "每层使用从浅到深的颜色渐变区分不同元素类型，增强视觉层次"
   }
 }

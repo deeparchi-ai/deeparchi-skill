@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Generate Architecture Diagram</title>
+</head>
+<body>
+  <canvas id="canvas" width="1200" height="800"></canvas>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // DeepArchi 品牌色彩
+    const colors = {
+      primary: '#1A3A5C',
+      primary_light: '#2E6B9E',
+      primary_lighter: '#4A9BD9',
+      secondary: '#7BC4E8',
+      secondary_lighter: '#E8F4FC',
+      white: '#FFFFFF',
+      text: '#2D3748',
+      text_secondary: '#4A5568'
+    };
+    
+    // 背景渐变
+    const gradient = ctx.createLinearGradient(0, 0, 0, 800);
+    gradient.addColorStop(0, colors.white);
+    gradient.addColorStop(1, colors.secondary_lighter);
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 1200, 800);
+    
+    // 主容器
+    const cx = 100, cy = 80, cw = 1000, ch = 640;
+    
+    // 阴影
+    ctx.fillStyle = colors.secondary_lighter;
+    ctx.beginPath();
+    roundRect(ctx, cx + 8, cy + 8, cw, ch, 20);
+    ctx.fill();
+    
+    // 主容器
+    ctx.fillStyle = colors.white;
+    ctx.strokeStyle = colors.secondary_lighter;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    roundRect(ctx, cx, cy, cw, ch, 20);
+    ctx.fill();
+    ctx.stroke();
+    
+    // 标题
+    ctx.fillStyle = colors.primary;
+    ctx.font = 'bold 36px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('Architecture Diagram', cx + cw / 2, cy + 80);
+    
+    // 徽章
+    ctx.fillStyle = colors.white;
+    ctx.strokeStyle = colors.secondary_lighter;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    roundRect(ctx, cx + cw - 120, cy + 30, 100, 24, 12);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = colors.primary;
+    ctx.font = '600 12px Arial';
+    ctx.textAlign = 'left';
+    ctx.fillText('ArchiMate 3.2', cx + cw - 110, cy + 46);
+    
+    // 四层架构
+    const layers = [
+      { name: 'Business Layer', desc: 'Business Role, Process, Service, Object', color: '#F4B942' },
+      { name: 'Application Layer', desc: 'Application Component, Service, Interface', color: '#66BB6A' },
+      { name: 'Data Layer', desc: 'Data Object, Service, Database', color: '#4A9BD9' },
+      { name: 'Technology Layer', desc: 'Node, System Software, Infrastructure', color: '#7CB342' }
+    ];
+    
+    layers.forEach((layer, i) => {
+      const y = cy + 130 + i * 90;
+      
+      // 卡片
+      ctx.fillStyle = colors.white;
+      ctx.strokeStyle = colors.secondary_lighter;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      roundRect(ctx, cx + 40, y, cw - 80, 70, 12);
+      ctx.fill();
+      ctx.stroke();
+      
+      // 左侧边框
+      ctx.fillStyle = layer.color;
+      ctx.fillRect(cx + 40, y, 4, 70);
+      
+      // 图标圆圈
+      const iconX = cx + 64, iconY = cy + 162 + i * 90;
+      ctx.fillStyle = layer.color;
+      ctx.beginPath();
+      ctx.arc(iconX, iconY, 28, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // 文字
+      ctx.fillStyle = colors.text;
+      ctx.font = '600 18px Arial';
+      ctx.textAlign = 'left';
+      ctx.fillText(layer.name, cx + 90, y + 42);
+      
+      ctx.fillStyle = colors.text_secondary;
+      ctx.font = '13px Arial';
+      ctx.fillText(layer.desc, cx + 90, y + 68);
+    });
+    
+    // 统计信息
+    const stats = [
+      { value: '100+', label: 'Elements' },
+      { value: '25+', label: 'Viewpoints' },
+      { value: '7', label: 'Layers' }
+    ];
+    
+    const sw = (cw - 80) / 3;
+    stats.forEach((stat, i) => {
+      const sx = cx + 40 + i * sw;
+      ctx.fillStyle = colors.primary;
+      ctx.font = 'bold 24px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText(stat.value, sx + sw / 2, cy + 510);
+      
+      ctx.fillStyle = colors.text_secondary;
+      ctx.font = '12px Arial';
+      ctx.fillText(stat.label, sx + sw / 2, cy + 542);
+    });
+    
+    // 网络装饰节点
+    ctx.fillStyle = colors.primary_lighter;
+    for (let i = 0; i < 30; i++) {
+      const angle = (i / 30) * Math.PI * 2;
+      const distance = 50 + Math.random() * 100;
+      const x = 200 + distance * Math.cos(angle);
+      const y = 650 + distance * Math.sin(angle);
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    
+    function roundRect(ctx, x, y, width, height, radius) {
+      ctx.moveTo(x + radius, y);
+      ctx.lineTo(x + width - radius, y);
+      ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+      ctx.lineTo(x + width, y + height - radius);
+      ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+      ctx.lineTo(x + radius, y + height);
+      ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+      ctx.lineTo(x, y + radius);
+      ctx.quadraticCurveTo(x, y, x + radius, y);
+    }
+    
+    // 下载图片
+    canvas.toBlob(function(blob) {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'architecture-diagram.jpg';
+      a.click();
+      URL.revokeObjectURL(url);
+    }, 'image/jpeg', 0.95);
+  </script>
+</body>
+</html>

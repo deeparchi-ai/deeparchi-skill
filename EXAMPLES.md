@@ -1,213 +1,310 @@
 # DeepArchi Skill 使用示例
 
-## 示例 1：创建业务架构视图
+## 示例 1：创建数字银行四层架构视图
 
 ### 场景描述
-为银行开户业务流程创建业务架构视图，展示业务角色、业务流程和业务服务之间的关系。
+为数字银行创建完整的四层架构视图，包含 Business、Application、Data、Technology 层，以及 Cross Layer View 和 Legend。
 
-### 步骤
+### Draw.io 文件结构
 
-1. **打开 draw.io 并启用 ArchiMate 形状库**
-   - 访问 https://app.diagrams.net/
-   - 在 "More Shapes" 中启用 ArchiMate 3.2 形状库
+```xml
+<mxfile pages="6">
+  <diagram id="business-view" name="Business View">...</diagram>
+  <diagram id="application-view" name="Application View">...</diagram>
+  <diagram id="data-view" name="Data View">...</diagram>
+  <diagram id="technology-view" name="Technology View">...</diagram>
+  <diagram id="cross-layer" name="Cross Layer View">...</diagram>
+  <diagram id="legend" name="Legend">...</diagram>
+</mxfile>
+```
 
-2. **添加业务角色**
-   - 拖拽 3 个 "Business Role" 元素
-   - 分别命名为：
-     - "客户"
-     - "银行柜员"
-     - "风控部门"
+### Business View 示例
 
-3. **添加业务流程**
-   - 拖拽 "Business Process" 元素
-   - 命名为 "开户流程"
-   - 设置颜色为 #FFD966（业务层标准色）
+```xml
+<!-- 页面说明 -->
+<mxCell id="b_note" style="text;html=1;strokeColor=none;fillColor=none;" 
+        value="BIAN Business View: 业务服务域清单" />
 
-4. **添加业务服务**
-   - 拖拽 2 个 "Business Service" 元素
-   - 分别命名为：
-     - "账户管理服务"
-     - "身份验证服务"
+<!-- 业务角色 - 最浅黄 #FFF8DC -->
+<mxCell id="b_role_1" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=role;archiType=square;fillColor=#FFF8DC;strokeColor=#666666;" 
+        value="Customer" />
 
-5. **建立关系**
-   - 使用 "Assignment" 关系：
-     - 客户 → 开户流程
-     - 银行柜员 → 开户流程
-     - 风控部门 → 开户流程
-   - 使用 "Realization" 关系：
-     - 开户流程 → 账户管理服务
-     - 开户流程 → 身份验证服务
-   - 使用 "Serving" 关系：
-     - 账户管理服务 → 客户
-     - 身份验证服务 → 风控部门
+<!-- 业务过程 - 浅黄 #FFE699 -->
+<mxCell id="b_proc_1" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;fillColor=#FFE699;strokeColor=#666666;" 
+        value="Customer Onboarding" />
 
-6. **添加标题和图例**
-   - 在图表顶部添加标题："银行开户业务架构视图"
-   - 添加图例说明元素和关系含义
+<!-- 业务服务 - 中黄 #FFD54F -->
+<mxCell id="b_srv_1" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" 
+        value="Customer Management (BIAN)" />
 
-## 示例 2：创建应用架构视图
+<!-- 业务对象 - 深黄 #F4B942 -->
+<mxCell id="b_obj_1" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#F4B942;strokeColor=#666666;" 
+        value="Customer Profile" />
+```
 
-### 场景描述
-为支付系统创建应用架构视图，展示应用组件、应用接口和数据对象之间的关系。
+### Application View 示例
 
-### 步骤
+```xml
+<!-- 应用组件 - 深绿 #66BB6A -->
+<mxCell id="a_comp_1" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#66BB6A;strokeColor=#666666;" 
+        value="Customer Management System" />
 
-1. **添加应用组件**
-   - 拖拽 3 个 "Application Component" 元素
-   - 分别命名为：
-     - "核心系统"
-     - "支付系统"
-     - "风控系统"
-   - 设置颜色为 #97D077（应用层标准色）
+<!-- 应用服务 - 浅绿 #E8F5E9 -->
+<mxCell id="a_srv_1" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#E8F5E9;strokeColor=#666666;" 
+        value="Customer Management Service" />
+```
 
-2. **添加应用接口**
-   - 拖拽 2 个 "Application Interface" 元素
-   - 分别命名为：
-     - "REST API"
-     - "消息队列接口"
+### Data View 示例
 
-3. **添加数据对象**
-   - 拖拽 2 个 "Data Object" 元素
-   - 分别命名为：
-     - "账户数据"
-     - "交易数据"
+```xml
+<!-- 数据对象 - 浅蓝 #BBDEFB -->
+<mxCell id="d_obj_1" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=passive;archiType=square;fillColor=#BBDEFB;strokeColor=#666666;" 
+        value="Customer Data" />
 
-4. **建立关系**
-   - 使用 "Serving" 关系：
-     - 支付系统 → 核心系统
-     - 风控系统 → 支付系统
-   - 使用 "Realization" 关系：
-     - 核心系统 → REST API
-     - 支付系统 → 消息队列接口
-   - 使用 "Access" 关系：
-     - 核心系统 → 账户数据
-     - 支付系统 → 交易数据
-     - 风控系统 → 交易数据
+<!-- 数据服务 - 中蓝 #64B5F6 -->
+<mxCell id="d_srv_1" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#64B5F6;strokeColor=#666666;" 
+        value="Customer Data Service" />
 
-5. **布局优化**
-   - 使用分层布局：接口在上，组件在中，数据在下
-   - 对齐和分布元素，保持视觉清晰
+<!-- 数据库 - 深蓝 #1976D2 (白字) -->
+<mxCell id="d_db_1" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=comp;archiType=square;fillColor=#1976D2;strokeColor=#666666;fontColor=#FFFFFF;" 
+        value="Customer DB" />
+```
 
-## 示例 3：创建技术架构视图
+### Technology View 示例
 
-### 场景描述
-为系统部署创建技术架构视图，展示技术节点、系统软件和网络之间的关系。
+```xml
+<!-- 技术节点 - 深绿 #7CB342 -->
+<mxCell id="t_node_1" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=node;archiType=square;fillColor=#7CB342;strokeColor=#666666;" 
+        value="API Gateway Cluster" />
 
-### 步骤
+<!-- 系统软件 - 中绿 #AED581 -->
+<mxCell id="t_sys_1" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;fillColor=#AED581;strokeColor=#666666;" 
+        value="Kubernetes" />
 
-1. **添加技术节点**
-   - 拖拽 2 个 "Node" 元素
-   - 分别命名为：
-     - "应用服务器集群"
-     - "数据库服务器集群"
-   - 设置颜色为 #97D077（技术层标准色）
+<!-- 技术服务 - 浅绿 #DCEDC8 -->
+<mxCell id="t_srv_1" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#DCEDC8;strokeColor=#666666;" 
+        value="API Management" />
+```
 
-2. **添加系统软件**
-   - 拖拽 3 个 "System Software" 元素
-   - 分别命名为：
-     - "Linux 操作系统"
-     - "MySQL 数据库"
-     - "Tomcat 中间件"
-
-3. **添加网络**
-   - 拖拽 2 个 "Network" 元素
-   - 分别命名为：
-     - "内部网络"
-     - "外部网络"
-
-4. **建立关系**
-   - 使用 "Assignment" 关系：
-     - Linux 操作系统 → 应用服务器集群
-     - Linux 操作系统 → 数据库服务器集群
-     - MySQL 数据库 → 数据库服务器集群
-     - Tomcat 中间件 → 应用服务器集群
-   - 使用 "Communication Path" 连接：
-     - 应用服务器集群 ↔ 数据库服务器集群（通过内部网络）
-     - 应用服务器集群 ↔ 外部网络
-
-5. **添加部署信息**
-   - 在节点上标注部署的应用组件
-   - 添加网络拓扑说明
-
-## 示例 4：创建跨层架构视图
+## 示例 2：Cross Layer View 四列布局
 
 ### 场景描述
-创建端到端的架构视图，展示从业务层到技术层的完整架构关系。
+创建跨层视图，展示四层架构的垂直对齐关系。
 
-### 步骤
+### 布局结构
 
-1. **业务层元素**
-   - 添加 "Business Process": "支付流程"
-   - 添加 "Business Service": "支付服务"
+```
+┌──────────────┬──────────────┬──────────────┬──────────────┐
+│ Business     │ Application  │ Data         │ Technology   │
+│ Layer        │ Layer        │ Layer        │ Layer        │
+├──────────────┼──────────────┼──────────────┼──────────────┤
+│ Customer     │ Customer     │ Customer     │ API          │
+│ Management   │ Mgmt Service │ Data Service │ Management   │
+│ (BIAN)       │              │              │              │
+├──────────────┼──────────────┼──────────────┼──────────────┤
+│ Payment      │ Payment      │ Transaction  │ Data         │
+│ Order (BIAN) │ Service      │ Data Service │ Storage      │
+├──────────────┼──────────────┼──────────────┼──────────────┤
+│ ...          │ ...          │ ...          │ ...          │
+└──────────────┴──────────────┴──────────────┴──────────────┘
+     #FFD54F       #E8F5E9        #64B5F6        #DCEDC8
+```
 
-2. **应用层元素**
-   - 添加 "Application Component": "支付系统"
-   - 添加 "Application Service": "支付处理服务"
+### XML 示例
 
-3. **技术层元素**
-   - 添加 "Node": "支付服务器"
-   - 添加 "System Software": "支付中间件"
+```xml
+<diagram id="cross-layer" name="Cross Layer View">
+  <mxGraphModel>
+    <root>
+      <mxCell id="0" />
+      <mxCell id="1" parent="0" />
+      
+      <!-- 说明文字 -->
+      <mxCell id="c_note" style="text;html=1;" 
+              value="Cross Layer View: 四层架构垂直对齐" />
+      
+      <!-- 第一列: Business (x=40) -->
+      <mxCell id="c_bsrv_1" 
+              style="...;fillColor=#FFD54F;..." 
+              value="Customer Management (BIAN)">
+        <mxGeometry x="40" y="60" width="220" height="50" />
+      </mxCell>
+      
+      <!-- 第二列: Application (x=300) -->
+      <mxCell id="c_asrv_1" 
+              style="...;fillColor=#E8F5E9;..." 
+              value="Customer Mgmt Service">
+        <mxGeometry x="300" y="60" width="220" height="50" />
+      </mxCell>
+      
+      <!-- 第三列: Data (x=560) -->
+      <mxCell id="c_dsrv_1" 
+              style="...;fillColor=#64B5F6;..." 
+              value="Customer Data Service">
+        <mxGeometry x="560" y="60" width="220" height="50" />
+      </mxCell>
+      
+      <!-- 第四列: Technology (x=820) -->
+      <mxCell id="c_tsrv_1" 
+              style="...;fillColor=#DCEDC8;..." 
+              value="API Management">
+        <mxGeometry x="820" y="60" width="220" height="50" />
+      </mxCell>
+      
+      <!-- 底部标签 -->
+      <mxCell id="c_label_b" style="text;fontColor=#B8860B;fontStyle=1;" 
+              value="Business Layer">
+        <mxGeometry x="40" y="300" width="220" height="20" />
+      </mxCell>
+      <!-- ... 其他标签 ... -->
+    </root>
+  </mxGraphModel>
+</diagram>
+```
 
-4. **建立跨层关系**
-   - 使用 "Realization" 关系：
-     - 支付处理服务 → 支付服务（应用层实现业务层）
-     - 支付中间件 → 支付处理服务（技术层实现应用层）
-   - 使用 "Serving" 关系：
-     - 支付处理服务 → 支付流程（应用层为业务层提供服务）
-
-5. **添加说明**
-   - 使用不同颜色区分不同层
-   - 添加层标签和说明
-
-## 示例 5：使用模板快速创建
+## 示例 3：Legend 页面设计
 
 ### 场景描述
-使用预定义的模板快速创建标准架构视图。
+创建图例页面，解释所有颜色和形状的含义。
 
-### 步骤
+### 布局结构
 
-1. **选择模板**
-   - 在 draw.io 中选择 "File → New from Template"
-   - 选择 "ArchiMate Business Architecture Template"
+```
+┌────────────────────────────────────────────────────────────────────┐
+│ Legend: 颜色和形状参考 (ArchiMate 3.2)                               │
+├─────────────────┬────────────────┬────────────────┬────────────────┤
+│ Business Layer  │ Application    │ Data Layer     │ Technology     │
+│ (业务层)        │ Layer (应用层) │ (数据层)       │ Layer (技术层) │
+├─────────────────┼────────────────┼────────────────┼────────────────┤
+│ [Role]          │ [Component]    │ [Data Object]  │ [Node]         │
+│ #FFF8DC         │ #66BB6A        │ #BBDEFB        │ #7CB342        │
+├─────────────────┼────────────────┼────────────────┼────────────────┤
+│ [Process]       │ [Service]      │ [Data Service] │ [System SW]    │
+│ #FFE699         │ #E8F5E9        │ #64B5F6        │ #AED581        │
+├─────────────────┼────────────────┼────────────────┼────────────────┤
+│ [Service]       │                │ [Database]     │ [Service]      │
+│ #FFD54F         │                │ #1976D2        │ #DCEDC8        │
+├─────────────────┤                ├────────────────┤                │
+│ [Object]        │                │                │                │
+│ #F4B942         │                │                │                │
+└─────────────────┴────────────────┴────────────────┴────────────────┘
+```
 
-2. **自定义元素**
-   - 替换模板中的占位符元素
-   - 根据实际业务调整元素名称
+## 示例 4：BIAN 服务域映射
 
-3. **调整关系**
-   - 根据实际架构关系调整连接
-   - 添加或删除必要的元素和关系
+### 场景描述
+按照 BIAN (Banking Industry Architecture Network) 框架组织业务服务域。
 
-4. **样式统一**
-   - 确保所有元素使用标准颜色
-   - 统一字体和字号
+### BIAN 核心服务域
+
+| BIAN Service Domain | 中文名称 | 业务能力 |
+|---------------------|---------|---------|
+| Customer Management | 客户管理 | 客户生命周期管理 |
+| Party Data Management | 当事方数据管理 | KYC/AML |
+| Product Management | 产品管理 | 产品目录和定价 |
+| Payment Order | 支付订单 | 支付执行 |
+| Card | 卡片服务 | 发卡和卡交易 |
+| Loan | 贷款服务 | 贷款发放和管理 |
+| Risk Management | 风险管理 | 风险评估和控制 |
+| Compliance | 合规服务 | 监管报告 |
+| Treasury | 资金管理 | 流动性管理 |
+| Analytics | 分析服务 | 数据分析和报告 |
+
+### XML 示例
+
+```xml
+<!-- BIAN Customer Management -->
+<mxCell id="bian_cm" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" 
+        value="Customer Management (BIAN)">
+  <mxGeometry x="500" y="60" width="260" height="50" />
+</mxCell>
+
+<!-- BIAN Payment Order -->
+<mxCell id="bian_po" 
+        style="html=1;outlineConnect=0;whiteSpace=wrap;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;fillColor=#FFD54F;strokeColor=#666666;" 
+        value="Payment Order (BIAN)">
+  <mxGeometry x="500" y="120" width="260" height="50" />
+</mxCell>
+```
+
+## 示例 5：元素几何布局规范
+
+### 标准尺寸
+
+| 元素类型 | 宽度 | 高度 | 说明 |
+|---------|-----|------|------|
+| 标准元素 | 200-260 | 50 | 适合单行文字 |
+| 宽元素 | 300-400 | 50 | 适合长名称 |
+| 方形元素 | 160 | 50 | 简短名称 |
+
+### 间距规范
+
+| 间距类型 | 数值 | 说明 |
+|---------|-----|------|
+| 垂直间距 | 60px | 元素行间距 |
+| 水平间距 | 40px | 元素列间距 |
+| 列宽 | 240-280px | 每列元素区域 |
+| 页面边距 | 40px | 距页面边缘 |
+
+### 坐标示例
+
+```xml
+<!-- 第一列 (x=40) -->
+<mxGeometry x="40" y="60" width="160" height="50" />   <!-- Row 1 -->
+<mxGeometry x="40" y="120" width="160" height="50" />  <!-- Row 2 -->
+<mxGeometry x="40" y="180" width="160" height="50" />  <!-- Row 3 -->
+
+<!-- 第二列 (x=240) -->
+<mxGeometry x="240" y="60" width="220" height="50" />  <!-- Row 1 -->
+<mxGeometry x="240" y="120" width="220" height="50" /> <!-- Row 2 -->
+
+<!-- 第三列 (x=500) -->
+<mxGeometry x="500" y="60" width="260" height="50" />  <!-- Row 1 -->
+```
 
 ## 最佳实践提示
 
-1. **保持简洁**：每个视图聚焦一个特定方面，避免信息过载
-2. **使用标准元素**：严格遵循 ArchiMate 标准，避免自定义形状
-3. **关系明确**：确保每个关系都有明确的语义和方向
-4. **标注完整**：为图表添加标题、图例、版本信息和说明
-5. **定期更新**：保持图表与实际情况同步，记录变更历史
+### 1. 颜色一致性
+- 始终使用定义好的颜色代码
+- 同层元素使用同色系
+- 用深浅区分元素类型
 
-## 导出和分享
+### 2. 样式标准化
+- 统一使用 `shape=mxgraph.archimate3.application`
+- 正确设置 `appType` 参数
+- 服务用 `archiType=rounded`，结构用 `archiType=square`
 
-### 导出格式选择
+### 3. 布局规范
+- 保持元素对齐
+- 使用一致的间距
+- 每页添加说明文字
 
-- **PNG**：用于文档插入和演示
-- **SVG**：用于网页展示和矢量编辑
-- **PDF**：用于正式文档和打印
-- **XML**：用于在 draw.io 中继续编辑
+### 4. 命名规范
+- 业务层使用业务术语
+- 应用层使用系统名称
+- 数据层使用实体名称
+- 技术层使用技术组件名称
 
-### 导出设置
+### 5. 文档化
+- 每页顶部添加说明
+- 创建 Legend 页面
+- 在 Cross Layer View 展示层级关系
 
-- 分辨率：300 DPI（用于打印）
-- 背景：透明或白色
-- 边框：根据需要添加
+## 参考文件
 
-### 集成到 DeepArchi 平台
-
-1. 导出为 XML 格式
-2. 在 DeepArchi 平台导入架构图
-3. 与架构元模型绑定
-4. 生成架构资产视图
+完整示例请参考：
+- `assets/digital-bank-archimate.drawio` - 数字银行四层架构完整示例
+- `assets/archimate-color-palette.json` - 颜色和样式定义

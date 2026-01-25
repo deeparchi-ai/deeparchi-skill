@@ -1,0 +1,339 @@
+/**
+ * DeepArchi Brand Theme
+ * 基于 DeepArchi Logo 设计的 CSS 主题变量
+ * Version: 1.0.0
+ */
+
+:root {
+  /* ==================== 主色 Primary ==================== */
+  --da-primary: #1A3A5C;
+  --da-primary-light: #2E6B9E;
+  --da-primary-lighter: #4A9BD9;
+  --da-primary-dark: #153049;
+  --da-primary-darker: #102536;
+
+  /* ==================== 辅助色 Secondary ==================== */
+  --da-secondary: #7BC4E8;
+  --da-secondary-light: #B8E0F5;
+  --da-secondary-lighter: #E8F4FC;
+
+  /* ==================== 强调色 Accent ==================== */
+  --da-accent: #E53935;
+  --da-accent-light: #FF6B6B;
+
+  /* ==================== 语义色 Semantic ==================== */
+  --da-success: #38A169;
+  --da-warning: #D69E2E;
+  --da-error: #E53E3E;
+  --da-info: #3182CE;
+
+  /* ==================== 中性色 Neutral ==================== */
+  --da-text: #2D3748;
+  --da-text-secondary: #4A5568;
+  --da-text-muted: #A0AEC0;
+  --da-border: #EDF2F7;
+  --da-background: #F7FAFC;
+  --da-white: #FFFFFF;
+
+  /* ==================== 渐变 Gradients ==================== */
+  --da-gradient-primary: linear-gradient(135deg, #1A3A5C 0%, #2E6B9E 50%, #4A9BD9 100%);
+  --da-gradient-network: linear-gradient(180deg, #7BC4E8 0%, #4A9BD9 50%, #2E6B9E 100%);
+  --da-gradient-subtle: linear-gradient(180deg, #FFFFFF 0%, #E8F4FC 100%);
+  --da-gradient-accent: linear-gradient(135deg, #E53935 0%, #FF6B6B 100%);
+
+  /* ==================== 阴影 Shadows ==================== */
+  --da-shadow-sm: 0 1px 2px 0 rgba(26, 58, 92, 0.05);
+  --da-shadow: 0 4px 6px -1px rgba(26, 58, 92, 0.1);
+  --da-shadow-md: 0 10px 15px -3px rgba(26, 58, 92, 0.1);
+  --da-shadow-lg: 0 20px 25px -5px rgba(26, 58, 92, 0.15);
+
+  /* ==================== 圆角 Border Radius ==================== */
+  --da-radius-sm: 4px;
+  --da-radius: 8px;
+  --da-radius-lg: 12px;
+  --da-radius-xl: 16px;
+  --da-radius-full: 9999px;
+
+  /* ==================== 间距 Spacing ==================== */
+  --da-space-1: 4px;
+  --da-space-2: 8px;
+  --da-space-3: 12px;
+  --da-space-4: 16px;
+  --da-space-6: 24px;
+  --da-space-8: 32px;
+  --da-space-12: 48px;
+
+  /* ==================== 字体 Typography ==================== */
+  --da-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --da-font-mono: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", monospace;
+  
+  --da-text-xs: 12px;
+  --da-text-sm: 14px;
+  --da-text-base: 16px;
+  --da-text-lg: 18px;
+  --da-text-xl: 20px;
+  --da-text-2xl: 24px;
+  --da-text-3xl: 30px;
+  --da-text-4xl: 36px;
+}
+
+/* ==================== 基础样式 Base ==================== */
+body {
+  font-family: var(--da-font-sans);
+  color: var(--da-text);
+  background-color: var(--da-white);
+  line-height: 1.6;
+}
+
+/* ==================== 按钮 Buttons ==================== */
+.da-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--da-space-3) var(--da-space-6);
+  border-radius: var(--da-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+}
+
+.da-btn-primary {
+  background: var(--da-primary);
+  color: var(--da-white);
+}
+.da-btn-primary:hover {
+  background: var(--da-primary-light);
+  box-shadow: var(--da-shadow);
+}
+
+.da-btn-secondary {
+  background: transparent;
+  color: var(--da-primary);
+  border: 2px solid var(--da-primary);
+}
+.da-btn-secondary:hover {
+  background: var(--da-secondary-lighter);
+}
+
+.da-btn-accent {
+  background: var(--da-gradient-accent);
+  color: var(--da-white);
+}
+.da-btn-accent:hover {
+  background: var(--da-accent);
+  box-shadow: var(--da-shadow);
+}
+
+.da-btn-ghost {
+  background: transparent;
+  color: var(--da-primary);
+}
+.da-btn-ghost:hover {
+  background: var(--da-secondary-lighter);
+}
+
+/* ==================== 卡片 Cards ==================== */
+.da-card {
+  background: var(--da-white);
+  border: 1px solid var(--da-border);
+  border-radius: var(--da-radius-lg);
+  padding: var(--da-space-6);
+  box-shadow: var(--da-shadow-sm);
+  transition: all 0.2s ease;
+}
+.da-card:hover {
+  box-shadow: var(--da-shadow-md);
+  transform: translateY(-2px);
+}
+
+.da-card-header {
+  font-size: var(--da-text-xl);
+  font-weight: 600;
+  color: var(--da-primary);
+  margin-bottom: var(--da-space-4);
+}
+
+/* ==================== 输入框 Inputs ==================== */
+.da-input {
+  width: 100%;
+  padding: var(--da-space-3) var(--da-space-4);
+  border: 1px solid var(--da-text-muted);
+  border-radius: var(--da-radius);
+  font-size: var(--da-text-base);
+  transition: all 0.2s ease;
+  outline: none;
+}
+.da-input:focus {
+  border-color: var(--da-primary-lighter);
+  box-shadow: 0 0 0 3px rgba(74, 155, 217, 0.2);
+}
+.da-input::placeholder {
+  color: var(--da-text-muted);
+}
+
+/* ==================== 导航 Navigation ==================== */
+.da-navbar {
+  background: var(--da-primary);
+  color: var(--da-white);
+  padding: var(--da-space-4) var(--da-space-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.da-navbar-brand {
+  font-size: var(--da-text-xl);
+  font-weight: 700;
+  color: var(--da-white);
+  text-decoration: none;
+}
+
+.da-navbar-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  padding: var(--da-space-2) var(--da-space-4);
+  border-radius: var(--da-radius);
+  transition: all 0.2s ease;
+}
+.da-navbar-link:hover {
+  background: var(--da-primary-light);
+  color: var(--da-white);
+}
+.da-navbar-link.active {
+  background: var(--da-primary-lighter);
+  color: var(--da-white);
+}
+
+/* ==================== 侧边栏 Sidebar ==================== */
+.da-sidebar {
+  background: var(--da-white);
+  border-right: 1px solid var(--da-border);
+  width: 260px;
+  height: 100vh;
+  padding: var(--da-space-4);
+}
+
+.da-sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: var(--da-space-3) var(--da-space-4);
+  color: var(--da-text);
+  text-decoration: none;
+  border-radius: var(--da-radius);
+  margin-bottom: var(--da-space-1);
+  transition: all 0.2s ease;
+}
+.da-sidebar-item:hover {
+  background: var(--da-secondary-lighter);
+}
+.da-sidebar-item.active {
+  background: var(--da-secondary-lighter);
+  color: var(--da-primary);
+  border-left: 3px solid var(--da-primary-lighter);
+}
+
+/* ==================== 标签 Tags ==================== */
+.da-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--da-space-1) var(--da-space-3);
+  border-radius: var(--da-radius-full);
+  font-size: var(--da-text-sm);
+  font-weight: 500;
+}
+
+.da-tag-primary {
+  background: var(--da-secondary-lighter);
+  color: var(--da-primary);
+}
+.da-tag-accent {
+  background: rgba(229, 57, 53, 0.1);
+  color: var(--da-accent);
+}
+.da-tag-success {
+  background: rgba(56, 161, 105, 0.1);
+  color: var(--da-success);
+}
+
+/* ==================== Hero 区域 ==================== */
+.da-hero {
+  background: var(--da-gradient-primary);
+  color: var(--da-white);
+  padding: var(--da-space-12) var(--da-space-8);
+  text-align: center;
+}
+
+.da-hero-title {
+  font-size: var(--da-text-4xl);
+  font-weight: 700;
+  margin-bottom: var(--da-space-4);
+}
+
+.da-hero-subtitle {
+  font-size: var(--da-text-xl);
+  opacity: 0.9;
+  margin-bottom: var(--da-space-8);
+}
+
+/* ==================== 网络装饰 Network Decoration ==================== */
+.da-network-bg {
+  position: relative;
+  overflow: hidden;
+}
+.da-network-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 60%;
+  height: 200%;
+  background: var(--da-gradient-network);
+  opacity: 0.1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ==================== 红点装饰 Red Dot Accent ==================== */
+.da-dot-accent {
+  position: relative;
+}
+.da-dot-accent::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 8px;
+  height: 8px;
+  background: var(--da-accent);
+  border-radius: 50%;
+}
+
+/* ==================== 分割线 Divider ==================== */
+.da-divider {
+  height: 1px;
+  background: var(--da-border);
+  margin: var(--da-space-6) 0;
+}
+
+.da-divider-accent {
+  height: 3px;
+  width: 60px;
+  background: var(--da-accent);
+  border-radius: var(--da-radius-full);
+}
+
+/* ==================== 文字颜色工具类 Text Utilities ==================== */
+.da-text-primary { color: var(--da-primary); }
+.da-text-secondary { color: var(--da-text-secondary); }
+.da-text-muted { color: var(--da-text-muted); }
+.da-text-accent { color: var(--da-accent); }
+.da-text-white { color: var(--da-white); }
+
+/* ==================== 背景色工具类 Background Utilities ==================== */
+.da-bg-primary { background-color: var(--da-primary); }
+.da-bg-secondary { background-color: var(--da-secondary-lighter); }
+.da-bg-accent { background-color: var(--da-accent); }
+.da-bg-white { background-color: var(--da-white); }
+.da-bg-gradient { background: var(--da-gradient-primary); }
