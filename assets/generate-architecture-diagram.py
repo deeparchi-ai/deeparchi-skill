@@ -8,6 +8,9 @@ from PIL import Image, ImageDraw, ImageFont
 import math
 import random
 
+# 固定随机种子，保证装饰性网络节点每次生成结果可复现
+random.seed(42)
+
 # 画布尺寸 (高清)
 WIDTH = 1200
 HEIGHT = 800

@@ -21,3 +21,7 @@ npm-debug.log*
 # Temporary files
 *.tmp
 *.temp
+
+# Draw.io backup/autosave files
+*.bkp
+.$*
