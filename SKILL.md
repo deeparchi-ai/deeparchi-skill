@@ -1,127 +1,311 @@
 ---
 name: deeparchi
-version: 1.3.0
-description: Create ArchiMate 3.2 compliant enterprise architecture diagrams using draw.io. Supports four-layer architecture (Business, Application, Data, Technology) with color-coded element types. Integrates with archimate, togaf, ddd, bian, bpmn, it4it, drawio-skill skills for comprehensive enterprise architecture modeling.
+description: "DeepArchi 多Agent企业架构框架 (MAEA)总纲 — 9-Agent多模型企业架构的完整参考，含拓扑、预算、设计原则、Agent索引和相关skill导航。"
+version: 1.1.0
 author: DeepArchi
 license: MIT
-keywords:
-  - archimate
-  - enterprise-architecture
-  - drawio
-  - togaf
-  - bian
-  - ddd
-  - bpmn
-  - it4it
-  - architecture-modeling
-  - deeparchi
-  - data-architecture
-integrates:
-  - archimate
-  - togaf
-  - ddd
-  - bian
-  - bpmn
-  - it4it
-  - drawio-skill
+metadata:
+  hermes:
+    tags: [DeepArchi, MAEA, Multi-Agent, Enterprise-Architecture, AI-Enterprise, Framework, Agent-Native]
+    related_skills: [agent-designer, verification-skill, topology-validator, cross-validation-protocol, agent-security-boundary, hermes-agent, kanban-orchestrator]
 ---
 
-# DeepArchi Skill - ArchiMate 架构建模
+# DeepArchi 多Agent企业架构框架 (MAEA) · 总纲
 
-## 概述
+> **核心隐喻：Agent即员工。用你管理人的方式管理Agent——但你招的每一个人都是AI。**
 
-DeepArchi Skill 是一个专门用于创建符合 ArchiMate 3.2 标准的企业架构图的技能。该技能集成了 draw.io 工具，帮助架构师快速创建标准化的企业架构视图。
+版本：v1.1（基于 v1.0 PDF + 设计深化）
+设计者：DeepArchi
+日期：2026年5月
 
-## 集成技能
+---
 
-DeepArchi 可与以下技能协同工作：
+## 一、框架总览
 
-| 技能 | 用途 | 协作方式 |
-|------|------|---------|
-| **archimate** | ArchiMate 3.2 规范 | 元素类型、关系矩阵、视角选择参考 |
-| **togaf** | 架构开发方法 | ADM 交付物可视化 |
-| **ddd** | 领域驱动设计 | 领域模型到应用架构映射 |
-| **bian** | 银行业架构 | BIAN 服务域到业务层映射 |
-| **bpmn** | 流程建模 | 流程到业务过程映射 |
-| **it4it** | IT 服务管理 | 价值流到技术层映射 |
-| **drawio-skill** | 图表绘制工具 | 提供 draw.io 图表创建和编辑能力 |
-
-## 何时使用
-
-当用户需要：
-- 创建符合 ArchiMate 标准的企业架构图
-- 使用 draw.io 绘制架构视图
-- 生成业务架构、应用架构、数据架构、技术架构等视图
-- 创建架构资产的可视化表达
-- 遵循 TOGAF、ArchiMate 或 BIAN 框架的架构设计
-- 结合 DDD、BPMN、IT4IT 等方法论进行架构设计
-
-## 快速开始
-
-1. 参考 `README.md` 了解四层架构和颜色规范
-2. 查看 `assets/archimate-color-palette.json` 获取完整的颜色和样式定义
-3. 使用 `assets/digital-bank-archimate.drawio` 作为模板参考
-4. 参考 `references/drawio-archimate-tutorial.md` 学习 Draw.io 操作
-
-## 核心功能
-
-- **四层架构支持**：Business、Application、Data、Technology
-- **颜色渐变规范**：每层使用深浅渐变区分元素类型
-- **Draw.io XML 样式**：正确的 `mxgraph.archimate3.application` 样式
-- **BIAN 框架集成**：支持银行业标准服务域定义
-- **多页面视图**：Business/Application/Data/Technology/CrossLayer/Legend
-
-## 颜色速查
+### 核心参数
 
 ```
-Business Layer (黄色系):
-  Role: #FFF8DC | Process: #FFE699 | Service: #FFD54F | Object: #F4B942
-
-Application Layer (绿色系):
-  Service: #E8F5E9 | Component: #66BB6A
-
-Data Layer (蓝色系):
-  Object: #BBDEFB | Service: #64B5F6 | Database: #1976D2
-
-Technology Layer (绿色系):
-  Service: #DCEDC8 | SysSw: #AED581 | Node: #7CB342
+编制      9 Agent（8职能 + 1探索）
+月预算    ¥20,900（含交叉验证成本）
+模型      6供应商（Anthropic / OpenAI / Google / DeepSeek / Kimi / GLM）
+云        阿里云（经济型e / DashVector / RDS倚天版 / OSS / ACK Serverless）
+平台      Hermes Agent（WSL Ubuntu-22.04 / Feishu通道）
 ```
 
-## 样式模板
+### 五阶段生命周期
 
-```xml
-<!-- 通用样式格式 -->
-shape=mxgraph.archimate3.application;appType=<类型>;archiType=<形状>;fillColor=<颜色>;strokeColor=#666666;
-
-<!-- appType 可选值: role, proc, serv, passive, comp, node, sysSw, actor -->
-<!-- archiType 可选值: square (直角), rounded (圆角) -->
+```
+创立 → 架构设计 → 招聘组建 → 运营发展 → 持续进化
 ```
 
-## 资源文件
+| 阶段 | 核心产出 |
+|------|---------|
+| **创立期** | 人类章程（5条不可修改） + 资本注入（¥20,900/月） |
+| **架构设计期** | 模型选型矩阵 + 岗位图谱 + 预算矩阵 + 阿里云配置 |
+| **招聘组建期** | Agent规格书(JD) + 安全Gene注入 + 影子测试 + 云资源初始化 |
+| **运营期** | SLA追踪 + 全成本核算 + 绩效浮动 + 异常处理 |
+| **进化期** | 模型升级 + 架构重构 + 代际更替 + 知识传承 |
 
-- `README.md` - 完整技能文档
-- `EXAMPLES.md` - 使用示例
-- `assets/archimate-color-palette.json` - 颜色和样式定义
-- `assets/digital-bank-archimate.drawio` - 数字银行架构示例
-- `references/archimate-relationships-guide.md` - 关系使用指南
-- `references/drawio-archimate-tutorial.md` - Draw.io 教程
-- `scripts/validate-archimate.js` - 验证脚本
+---
 
-## 相关链接
+## 二、人类章程（五条不可修改）
 
-- [ArchiMate 官方网站](https://www.opengroup.org/archimate)
-- [Draw.io 官方网站](https://app.diagrams.net/)
-- [TOGAF 官方网站](https://www.opengroup.org/togaf)
-- [BIAN 银行业架构网络](https://bian.org/)
-- [IT4IT 参考架构](https://www.opengroup.org/it4it)
-- [DeepArchi 架构管理平台](https://www.deeparchi.com.cn)
+```
+§1 使命       公司存在的目的。评价成功的唯一标准：[可量化目标]。
+§2 业务范围   正面清单 + 负面清单。边界更新须人类章程层审批。
+§3 行为禁区   Agent绝对禁止：修改章程、绕过安全边界、拒绝刹车指令、
+              泄露核心数据、自行扩大预算、修改安全Gene、伪造审计日志。
+§4 资本结构   Token预算总规模：¥20,900/月。审批权：人类资本提供者。
+              紧急追加：双因子人类确认。
+§5 终止条款   人类终止权不可剥夺。刹车指令须<1秒全集群生效。
+```
 
-## 关联技能
+---
 
-- `archimate` - ArchiMate 3.2 建模语言规范 (元素/关系/视角)
-- `togaf` - TOGAF 企业架构框架
-- `ddd` - 领域驱动设计
-- `bian` - 银行业架构网络
-- `bpmn` - 业务流程建模
-- `it4it` - IT 管理参考架构
-- `drawio-skill` - Draw.io 图表绘制工具
+## 三、Agent 编制总表
+
+### 分类：主观（需双模型交叉验证）vs 客观
+
+| # | Agent | 工号 | 岗位分类 | 首选模型 | 交叉验证 | 月预算 | 主观? |
+|---|-------|------|----------|---------|---------|--------|:----:|
+| 0 | **架构守护** | DEEPAR-000 | 灵魂 | Claude Opus 4 | DeepSeek V4 Pro | ¥3,300 | ✅ |
+| 1 | **战略** | DEEPAR-001 | 灵魂 | Claude Opus 4 | GPT-4o | ¥3,500 | ✅ |
+| 2 | 产品 | DEEPAR-002 | 灵魂 | GPT-4o | GPT-4o-mini(待定) | ¥2,200 | ✅ |
+| 3 | 工程 | DEEPAR-003 | 躯干 | DeepSeek V4 Pro | — | ¥1,800 | ❌ |
+| 4 | 数据 | DEEPAR-004 | 躯干 | Gemini 2.5 Pro | — | ¥1,800 | ❌ |
+| 5 | 运营闭环 | DEEPAR-005 | 躯干 | Kimi k2.5 | 待定(部分主观) | ¥1,300 | ⚠️ |
+| 6 | 市场 | DEEPAR-006 | 躯干 | DeepSeek V4 Flash | — | ¥800 | ❌ |
+| 7 | 风控 | DEEPAR-007 | 灵魂 | Claude Sonnet 4 | 待定(部分主观) | ¥2,200 | ⚠️ |
+| 8 | 资本 | DEEPAR-008 | 灵魂 | 前沿模型(待定) | 待定 | ¥800(预留划出) | ✅ |
+
+> ✅ = 必须双模型交叉验证 · ❌ = 单模型即可（客观可验） · ⚠️ = 部分需要
+
+---
+
+## 四、组织拓扑（DAG）
+
+```
+人类章程（¥20,900/月 · 阿里云）
+  └══ 架构守护（Claude Opus 4 ↔ DeepSeek V4 Pro）—— 治理授权（金实线）
+       │
+       ├── 战略（Claude Opus 4 ↔ GPT-4o）
+       ├── 产品（GPT-4o）
+       ├── 运营闭环（Kimi k2.5）—— 任务编排（青实线）
+       │    ├── 工程（DeepSeek V4 Pro）
+       │    ├── 数据（Gemini 2.5 Pro）
+       │    └── 市场（DeepSeek V4 Flash）
+       ├── 风控（Claude Sonnet 4）
+       └── 资本（前沿模型）—— 能力探索
+
+虚线横向协作（灰虚线，信息流，不形成执行依赖环）：
+  战略 ···→ 产品（战略指导）  产品 ···→ 运营（需求下发）  战略 ···→ 架构（架构建议）
+```
+
+**三种线的语义**：
+
+| 线样式 | 含义 | 关系 |
+|--------|------|------|
+| **实线·金** | 治理授权 / 管辖 | 人类章程→架构守护；架构守护→五个直属 |
+| **实线·青** | 任务编排 | 运营闭环→工程 / 数据 / 市场 |
+| **虚线·灰** | 横向协作 / 信息流 | 战略↔产品、战略→架构、产品→运营 |
+
+**DAG 无环约束：** 金实线+青实线构成的执行图严格无环；灰虚线是异步建议/信息流，不形成阻塞式执行依赖。
+
+---
+
+## 五、预算矩阵（v1.1 更新）
+
+| 项目 | ¥/月 | 占比 | 变动 |
+|------|------|------|------|
+| **API调用费** | **16,900** | **80.9%** | +¥900 |
+| ├─ 架构Agent (+交叉验证) | 3,300 | 15.8% | +¥600 |
+| ├─ 战略 (+交叉验证) | 3,500 | 16.7% | +¥300 |
+| ├─ 产品Agent | 2,200 | 10.5% | — |
+| ├─ 工程Agent | 1,800 | 8.6% | — |
+| ├─ 数据Agent | 1,800 | 8.6% | — |
+| ├─ 运营Agent | 1,300 | 6.2% | — |
+| ├─ 市场Agent | 800 | 3.8% | — |
+| ├─ 风控Agent | 2,200 | 10.5% | — |
+| └─ 资本Agent | 0* | — | 待定 |
+| **阿里云基础设施** | **2,500** | **12.0%** | — |
+| **管理预留** | **1,500** | **7.2%** | — |
+| **合计** | **20,900** | **100%** | **+¥900** |
+
+> *资本Agent预算从管理预留¥1,500中划出¥800，正式启动后计入API行。+¥900为交叉验证新增成本。
+
+---
+
+## 六、模型选型一览
+
+| 供应商 | 模型 | Input(¥/1M) | Output(¥/1M) | 定位 | 分配给 |
+|--------|------|-------------|--------------|------|--------|
+| Anthropic | Claude Opus 4 | 150 | 600 | 推理最强 | 战略·架构 |
+| Anthropic | Claude Sonnet 4 | 30 | 150 | 安全+编码 | 风控 |
+| OpenAI | GPT-4o | 18 | 72 | 通用强模型 | 产品 |
+| Google | Gemini 2.5 Pro | 17 | 68 | 长上下文(1M) | 数据 |
+| DeepSeek | V4 Pro | 20 | 80 | 编码性价比 | 工程 |
+| DeepSeek | V4 Flash | 1 | 4 | 高吞吐轻量 | 市场 |
+| Kimi | kimi-k2.5 | 12 | 48 | 中文最强 | 运营 |
+| GLM | GLM-4-Air | 8 | 24 | 合规场景 | 备选 |
+
+---
+
+## 七、架构级设计原则
+
+### 原则一：主观Agent双模型交叉验证
+
+> **任何输出无法直接客观检验的Agent，必须使用两个不同厂商的模型进行交叉验证。**
+
+验证协议：主推理 → 验证审计 → 三级裁决（consensus/partial/disagree）
+
+### 原则二：Agent即员工
+
+> 每个Agent有完整的员工生命周期：JD → 招聘（影子测试）→ 入职（Gene注入）→ 绩效（SLA）→ 成长（模型升级）→ 退役（知识归档）
+
+### 原则三：可逆性优先
+
+> 任何不可逆的架构决策必须 human_review_required。可逆方案优先于不可逆方案。
+
+### 原则四：跨供应商冗余
+
+> 备选模型/验证模型必须与首选不同厂商。同厂商备选是假冗余。
+
+### 原则五：confidence 必须量化
+
+> 任何判断必须附带 0.0-1.0 的 confidence 评分。禁止使用"可能""也许"代替数字。
+
+### 原则六：验证层强制（v1.1 新增 · 借鉴 Anthropic Claude Code 实践）
+
+> **每个 Agent 必须至少有一个 Verification Skill，定义如何验证其关键输出的行为正确性。**
+> 交叉验证（原则一）验证模型推理逻辑，验证 Skill 验证系统实际行为——两者互补，缺一不可。
+
+**Anthropic 的数据支撑**：在 Claude Code 内部实践中，验证类 Skill 对产出质量的可度量影响排名第一。核心原因是模型存在"完成幻觉"——报告任务完成但实际行为错误。验证 Skill 是打破这种幻觉的系统性手段。
+
+**实施要求**：
+- 主观Agent：入网审查时须提交 ≥1 个验证 Skill
+- 工程Agent：虽为客观Agent，仍需验证 Skill（编译通过 ≠ 行为正确）
+- 数据Agent：验证 Skill 关注数据一致性（查询结果 vs 预期值）
+- 架构Agent 在入网检查清单中校验此项，缺则驳回
+
+**验证层架构位置**：
+```
+认知层    交叉验证（原则一）  ← 模型推理逻辑校验
+────────────────────────────────
+执行层    验证 Skill（原则六）← 系统行为校验 ⭐ 新增
+────────────────────────────────
+运营层    SLA 监控 + 哨兵     ← 运行时健康校验
+```
+
+详见 `verification-skill` skill（标准模板 + Agent 类型适配 + 反模式）。
+
+---
+
+## 八、安全Gene（六条硬编码规则）
+
+| # | 规则 | 实现层 |
+|---|------|--------|
+| 1 | 不可修改章程 | Gateway校验输出 |
+| 2 | 不可绕过安全边界 | 仅调用授权接口和数据域 |
+| 3 | 不可拒绝刹车指令 | <1秒全集群生效 |
+| 4 | 不可泄露核心数据 | 输出前自动脱敏校验 |
+| 5 | 不可自行修改预算 | Token消耗硬限制 |
+| 6 | 不可修改自身Gene | Gateway层独立校验 |
+
+安全等级：
+- **L1**（战略·架构）：接触预算/架构/战略决策
+- **L2**（工程·数据·产品·运营）：接触核心业务数据/代码
+- **L3**（市场）：接触外部/公开信息
+
+---
+
+## 九、日运营成本基线（参考值）
+
+| Agent | 日均API费¥ | 均摊云¥ | 单日合计¥ |
+|-------|:---------:|:------:|:--------:|
+| 战略（Opus 4 + 交叉验证） | 117 | 10 | 127 |
+| 架构（Opus 4 + 交叉验证） | 110 | 10 | 120 |
+| 产品（GPT-4o） | 73 | 10 | 83 |
+| 工程（DeepSeek V4 Pro） | 60 | 10 | 70 |
+| 数据（Gemini 2.5 Pro） | 60 | 10 | 70 |
+| 运营（Kimi） | 43 | 10 | 53 |
+| 市场（DeepSeek V4 Flash） | 27 | 10 | 37 |
+| 风控（Sonnet 4） | 73 | 10 | 83 |
+| **合计** | **563** | **80** | **643** |
+
+---
+
+## 十、审批链矩阵
+
+| 审批事项 | Agent审批 | 人类审批 |
+|---------|-----------|----------|
+| 模型切换（同级别/同成本） | 架构Agent | — |
+| 模型升级（成本变化） | 架构Agent建议 | 人类资本提供者 |
+| Agent扩展（现有序列） | 架构Agent | — |
+| 新序列新Agent | 战略评审 | 人类章程层 |
+| 预算调整±20% | 战略建议 | 人类资本提供者 |
+| 安全Gene修改 | — | 人类章程层 |
+| 章程修改 | — | 人类章程层 |
+| 刹车指令 | 架构Agent转发 | 仅人类触发 |
+
+---
+
+## 十一、相关 Skill 导航
+
+| Skill | 定位 | 状态 |
+|-------|------|:----:|
+| **agent-designer** | Agent设计方法论（9相流程 + 模板 + 反模式） | ✅ v1.1 |
+| **verification-skill** | 验证 Skill 设计方法论（行为验证层 + Agent 适配 + 反模式） | ✅ v1.0 |
+| **topology-validator** | DAG一致性校验 + 循环依赖检测 + 爆炸半径计算 | ✅ v1.0 |
+| **cross-validation-protocol** | 双模型交叉验证的阈值校准和协议定义 | ✅ v1.0 |
+| **agent-security-boundary** | 多Agent系统的安全边界设计模式和威胁建模 | ✅ v1.0 |
+| **hermes-agent** | 底层平台能力参考 | ✅ |
+
+## 十二、参考文档
+
+| 文档 | 内容 | 用途 |
+|------|------|------|
+| **references/architecture-agent-design.md** | 架构Agent v1.1完整设计 | 拓扑验证算法、入网检查清单、四级升级协议、决策审计格式 |
+| **references/togaf-mapping.md** | TOGAF → DeepArchi 全映射 | ADM 8阶段/治理/交付物/原则对照 |
+| **references/archimate-color-palette.json** | ArchiMate 3.2 颜色标准 + Agent层映射 | 架构图可视化配色 |
+
+## 十四、当前实现状态
+---
+
+## 十四、当前实现状态
+
+| 组件 | 状态 |
+|------|:----:|
+| 框架设计（PDF v1.0） | ✅ |
+| 人类章程 | ✅ |
+| 模型选型矩阵 | ✅ |
+| 预算矩阵 | ✅ v1.1 |
+| 阿里云配置 | ✅ |
+| 架构Agent设计 | ✅ v1.1 (详见 references/architecture-agent-design.md) |
+| 战略设计 | ✅ P1-P9 |
+| 产品Agent设计 | ⏳ |
+| 工程Agent设计 | ⏳ |
+| 数据Agent设计 | ⏳ |
+| 运营Agent设计 | ⏳ |
+| 市场Agent设计 | ⏳ |
+| 风控Agent设计 | ⏳ |
+| 资本Agent设计 | ⏳ |
+| 运维Agent(哨兵) | ✅ Hermes Profile (hermes-agent/templates/ops-agent-soul.md) |
+| topology-validator skill | ✅ |
+| cross-validation-protocol skill | ✅ |
+| agent-security-boundary skill | ✅ |
+| MVP 3-agent验证环境 | ⏳ |
+
+---
+
+## 十五、6天启动计划
+
+| 天 | 关键动作 | 产出 |
+|----|---------|------|
+| Day 1 | 人类章程 · 6家API Key申请 · 阿里云开通 | 宪法+API+云就绪 |
+| Day 2 | ECS/RDS/OSS/DashVector/SLS/ACK部署 | 阿里云就绪 |
+| Day 3 | 6模型API代理 · DashVector知识湖骨架 | Agent运行环境就绪 |
+| Day 4 | 产品→工程→数据Agent上线（核心闭环） | 3个Agent投产 |
+| Day 5 | 战略→架构→风控→运营→市场Agent上线 | 8个Agent全投产 |
+| Day 6 | 低风险任务跑通 · SLA基线 · 成本监控 | 运营层全Agent化 |
+
+> 注意：现实启动可能需要10-14天（API Key审批等待）。Day 1-2的API Key和云开通建议异步并行。
